@@ -1,14 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Tezos.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "markdown-pages",
       },
     },
     'gatsby-transformer-sharp',
