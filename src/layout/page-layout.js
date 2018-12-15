@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
+import LanguageSwitcher from '../components/LanguageSwitcher';
 import Header from '../components/header'
 
 const Layout = ({ children }) => (
@@ -37,6 +37,7 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
+          <LanguageSwitcher />
         </div>
       </Fragment>
     )}
