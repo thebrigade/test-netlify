@@ -1,11 +1,11 @@
 import React from 'react'
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import * as logo from '../../images/logo.png';
 
 const Logo = (props) => {
   return (
-    <div className="logo"><img src={props.image}/></div>
+    <div className="logo"><img src={props.image} alt="logo"/></div>
   )
 }
 

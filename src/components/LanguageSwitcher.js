@@ -45,6 +45,7 @@ class LanguageSwitcher extends Component {
 
     return (
       <div className="LanguageSwitcher">
+        active language: {this.state.language}
         {languages.map(language => this.renderLanguageChoice(language))}
       </div>
     )

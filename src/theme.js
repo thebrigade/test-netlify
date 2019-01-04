@@ -5,6 +5,8 @@ export const COLOR_PRIMARY_LINK_INVERSE = '#fff';
 export const COLOR_PRIMARY_COPY = '#191414';
 // headers and titles
 export const COLOR_PRIMARY_HEADER = '#123262';
+// footer
+export const COLOR_FOOTER = '#1a2734';
 
 const theme = {
   button: {
