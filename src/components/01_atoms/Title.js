@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import theme from '../../theme';
-import { breakLine } from '../../lib/helpers';
-
+import ReactHtmlParser from 'react-html-parser';
 
 const StyledTitle = styled.h2`
   font-weight: 300;
@@ -14,7 +13,7 @@ const Title = (props) => {
   return (
     <ThemeProvider theme={theme}>
     <StyledTitle className={props.className}>
-      {breakLine(props.text)}
+      {ReactHtmlParser(props.text)}
     </StyledTitle>
     </ThemeProvider>
   )
