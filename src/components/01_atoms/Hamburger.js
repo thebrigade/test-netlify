@@ -1,6 +1,6 @@
-import React, { Component, Children } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import theme, { COLOR_PRIMARY_LINK } from '../../theme';
+import React, { Component } from 'react';
+import styled  from 'styled-components';
+import { COLOR_PRIMARY_LINK } from '../../theme';
 import PropTypes from 'prop-types';
 
 const StyledHamburger = styled.button`

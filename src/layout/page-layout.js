@@ -6,7 +6,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import Header from '../components/03_organisms/Header';
 import Footer from '../components/03_organisms/Footer';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import theme, {COLOR_FOOTER} from '../theme';
+import theme, {COLOR_FOOTER, COLOR_PRIMARY_LINK} from '../theme';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -26,6 +26,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
     background: ${COLOR_FOOTER};
+  }
+  a, a:visited{
+    color: ${COLOR_PRIMARY_LINK};
   }
 `
 const StyledBody = styled.div`

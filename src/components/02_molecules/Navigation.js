@@ -1,6 +1,6 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import theme, { COLOR_PRIMARY_LINK } from '../../theme';
+import theme from '../../theme';
 import Hamburger from '../01_atoms/Hamburger';
 
 const StyledNavHamburger = styled(Hamburger)``

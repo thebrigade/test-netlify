@@ -12,7 +12,7 @@ const IndexPage = (props) => (
     <Hero
       icon={heroIcon}
       text="Tezos is formalizing<br />blockchain governance"
-      sub="In Tezos, stakeholders<br />govern the protocol."
+      sub="In Tezos, stakeholders<br /><a href='https://google.com'>govern</a> the protocol."
     />
     <Title text={props.t("header")} />
     <p>Welcome to your new Gatsby site.</p>

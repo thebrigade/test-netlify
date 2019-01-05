@@ -1,11 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components';
-import Navigation from '../02_molecules/Navigation';
-import * as logoImage from '../../images/logo-tezos.svg';
-import Logo from '../01_atoms/Logo';
-import Button from '../01_atoms/Button';
-import * as mediumImage from '../../images/icons/logo-medium.png';
 import theme from '../../theme';
 
 const StyledFooter = styled.footer`
@@ -25,12 +19,12 @@ const StyledFooter = styled.footer`
     margin: 0;
   }
 `;
-
+const copyDate = new Date().getFullYear();
 const Footer = (props) => (
   <ThemeProvider theme={theme}>
     <StyledFooter>
       <div>
-       <p>Copyright &copy; 2018 Tezos. All rights reserved.</p>
+       <p>{(`Copyright &copy; ${copyDate} Tezos. All rights reserved.`)}</p>
         
       </div>
     </StyledFooter>
