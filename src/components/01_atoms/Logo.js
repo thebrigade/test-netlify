@@ -1,7 +1,7 @@
 import React from 'react'
 // import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import * as logo from '../../images/logo.png';
+import * as logo from '../../images/logo-tezos.svg';
 
 const Logo = (props) => {
   return (

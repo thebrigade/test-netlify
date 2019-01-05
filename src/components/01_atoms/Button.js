@@ -18,47 +18,80 @@ const buttonStyle = (theme) => {
 const StyledButton = styled.a`
   ${p => p.buttonModifier ? buttonStyle(p.theme.buttonBig) : buttonStyle(p.theme.button)};
   padding: ${p => p.buttonModifier ? '17px 40px' : '0px'};
-  display: inline-block;
+  display: inline-flex;
   text-decoration: none;
   line-height: 1em;
   text-align: ${p => p.buttonModifier ? 'center' : 'left'};
   border-radius: ${p => p.buttonModifier ? '25px' : '0px'};
-  text-transform: uppercase;
-  font-weight: 500;
+  text-transform: ${p => p.inline ? 'normal' : 'uppercase'};
+  font-weight: ${p => p.inline ? 'normal' : '500'};
+  flex-direction: ${p => p.iconDirectionReverse ? 'row-reverse' : 'row'};
+  align-items: center;
+  justify-content: space-around;
+  img{
+    margin: 0 20px;
+  }
 `;
 
 
 class Button extends Component {
   static props = {
-    text: PropTypes.string,
-    to: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
     external: PropTypes.bool,
-    buttonBig: PropTypes.bool
+    buttonBig: PropTypes.bool,
+    iconDirectionReverse: PropTypes.bool,
+    iconImage: PropTypes.string,
+    inline: PropTypes.bool
   }
+
   static defaultProps = {
-    text: '',
-    to: '/',
     external: false,
-    buttonBig: false
+    buttonBig: false,
+    iconDirectionReverse: false,
   }
+
   createButton() {
-    const { to, text, external, buttonBig } = this.props;
+    const { 
+      to,
+      text,
+      external,
+      buttonBig,
+      iconImage,
+      iconDirectionReverse,
+      inline
+    } = this.props;
+
+    let props = {
+      title: text,
+      buttonModifier: buttonBig,
+      inline: inline
+    };
+    
     if(external) {
-      return (
-        <StyledButton href={to} target="_blank" title={text} buttonModifier={buttonBig}>
-          {text}
-        </StyledButton>
-      )
+      props.href = to;
+      props.target = "_blank"
     } else {
-      return (
-        <StyledButton href="#" onClick={() => navigate(to)} title={text} buttonModifier={buttonBig}>
-          {text}
-        </StyledButton>
-      )
+      props.href = '#';
+      props.onClick = (e) => {
+        navigate(to)
+        e.preventDefault();
+      }
     }
+
+    if(iconDirectionReverse) {
+      props.iconDirectionReverse = true
+    }
+    
+    return (
+      <StyledButton {...props}>
+        {typeof(iconImage) !== 'undefined' ? <img src={iconImage} alt="label"/> : null}
+        {text}
+      </StyledButton>
+    )
   }
+  
   render() {
-    const { text, to } = this.props;
     return (
       <ThemeProvider theme={theme}>
         {this.createButton()}

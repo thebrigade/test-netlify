@@ -22,6 +22,10 @@ const theme = {
   },
   header: {
     color: COLOR_PRIMARY_HEADER
+  },
+  footer: {
+    color: 'white',
+    background: COLOR_FOOTER
   }
 }
 

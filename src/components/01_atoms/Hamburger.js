@@ -54,28 +54,36 @@ const StyledHamburger = styled.button`
   &:hover{
     cursor: pointer;
   }
+  &:active{
+    outline: none;
+    border: none;
+  }
 `;
 
 
 class Hamburger extends Component {
   static props = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    onToggle: PropTypes.func
   }
   constructor(props) {
     super(props);
     this.state = { open: false }
   }
   toggleMenu() {
+    const { onToggle } = this.props
     const { open } = this.state;
 
     if(open) {
       this.setState({open: false})
     } else {
       this.setState({open: true});
-    }    
+    }
+    onToggle(this); 
   }
   render() {
-    const { open, className } = this.state;
+    const { open } = this.state;
+    const { className } = this.props;
     return (
       <StyledHamburger
         onClick={() => this.toggleMenu()}

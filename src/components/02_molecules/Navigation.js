@@ -3,15 +3,10 @@ import styled, { ThemeProvider } from 'styled-components';
 import theme, { COLOR_PRIMARY_LINK } from '../../theme';
 import Hamburger from '../01_atoms/Hamburger';
 
-const StyledNav = styled.nav`
-
-  position: relative;
-  .hamburger{
-    position: absolute;
-  }
-`;
+const StyledNavHamburger = styled(Hamburger)``
 
 const StyledNavGroup = styled.div`
+  display: none;
   ul, li{
     list-style: none;
   }
@@ -23,10 +18,29 @@ const StyledNavGroup = styled.div`
       &:first-child{margin: 0;}
     }
   }
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 `;
 
+const StyledNav = styled.nav`
+  position: relative;
+  ${StyledNavHamburger}{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -7px;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+`;
 
 class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { mobileNavOpen: false }
+  }
   createLinks() {
     const { children } = this.props;
     return React.Children.map(children, (el) => {
@@ -37,16 +51,20 @@ class Navigation extends Component {
       )
     })
   }
+  hamburgerToggle(e) {
+    this.setState({mobileNavOpen: e.state.open})
+  }
   render() {
+    const {mobileNavOpen} = this.state;
     return (
       <ThemeProvider theme={theme}>
         <StyledNav>
-          <Hamburger className="hamburger"/>
-          <StyledNavGroup>
+          <StyledNavGroup showNav={mobileNavOpen}>
             <ul>
               {this.createLinks()}
             </ul>
           </StyledNavGroup>
+          <StyledNavHamburger onToggle={(e) => this.hamburgerToggle(e)}/>
         </StyledNav>
       </ThemeProvider>
     )
