@@ -10,6 +10,7 @@ import * as mediumImage from '../../images/icons/logo-medium.png';
 
 const StyledHeader = styled.div`
   margin-bottom: 1.45rem;
+  padding: 10px 20px;
   & > div{
     margin: 0 auto;
     max-width: 1200px;
@@ -34,7 +35,13 @@ const Header = ({ siteTitle }) => (
       <Navigation>
         <Button text="LEARN ABOUT TEZOS" to="https://google.com" external/>
         <Button text="BUG BOUNTY" to="/get-started"/>
-        <Button text="BLOG" to="/get-started" iconImage={mediumImage} iconDirectionReverse />
+        <Button
+          text="BLOG"
+          to="/get-started"
+          iconImage={mediumImage} 
+          iconDirectionReverse
+          iconSmall
+        />
         <Button text="GET STARTED" to="/get-started" buttonBig/>
       </Navigation>
     </div>

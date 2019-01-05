@@ -5,11 +5,15 @@ import { withNamespaces } from 'react-i18next';
 import Button from '../components/01_atoms/Button';
 import Title from '../components/01_atoms/Title';
 import Hero from '../components/02_molecules/Hero';
-
+import * as mediumLogo from '../images/icons/logo-medium.png';
 
 const IndexPage = (props) => (
   <Layout>
-    <Hero text="Tezos is formalizing blockchain governance" />
+    <Hero
+      icon={mediumLogo}
+      text="Tezos is formalizing<br />blockchain governance"
+      sub="In Tezos, stakeholders<br />govern the protocol."
+    />
     <Title text={props.t("header")} />
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>

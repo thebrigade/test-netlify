@@ -18,9 +18,9 @@ const buttonStyle = (theme) => {
 const StyledButton = styled.a`
   ${p => p.buttonModifier ? buttonStyle(p.theme.buttonBig) : buttonStyle(p.theme.button)};
   padding: ${p => p.buttonModifier ? '17px 40px' : '0px'};
-  display: inline-flex;
+  display: flex;
   text-decoration: none;
-  line-height: 1em;
+  line-height: 1;
   text-align: ${p => p.buttonModifier ? 'center' : 'left'};
   border-radius: ${p => p.buttonModifier ? '25px' : '0px'};
   text-transform: ${p => p.inline ? 'normal' : 'uppercase'};
@@ -29,7 +29,11 @@ const StyledButton = styled.a`
   align-items: center;
   justify-content: space-around;
   img{
-    margin: 0 20px;
+    margin: 0 10px;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: ${p => p.iconSmall ? 14 : 25}px;
   }
 `;
 
@@ -42,13 +46,15 @@ class Button extends Component {
     buttonBig: PropTypes.bool,
     iconDirectionReverse: PropTypes.bool,
     iconImage: PropTypes.string,
-    inline: PropTypes.bool
+    inline: PropTypes.bool,
+    iconSmall: PropTypes.bool
   }
 
   static defaultProps = {
     external: false,
     buttonBig: false,
     iconDirectionReverse: false,
+    iconSmall: false
   }
 
   createButton() {
@@ -59,13 +65,15 @@ class Button extends Component {
       buttonBig,
       iconImage,
       iconDirectionReverse,
+      iconSmall,
       inline
     } = this.props;
 
     let props = {
       title: text,
       buttonModifier: buttonBig,
-      inline: inline
+      inline: inline,
+      iconSmall: iconSmall
     };
     
     if(external) {
