@@ -1,6 +1,11 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components';
+import LinkSocial from '../01_atoms/LinkSocial';
+import SociaGroup from '../02_molecules/SocialGroup';
 import theme from '../../theme';
+import * as TwitterLogo from '../../images/icons/social-icon-twitter.svg';
+import * as GitlabLogo from '../../images/icons/social-icon-gitlab.svg';
+import * as RiotLogo from '../../images/icons/social-icon-riot.svg';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -24,7 +29,21 @@ const Footer = (props) => (
   <ThemeProvider theme={theme}>
     <StyledFooter>
       <div>
-       <p>{(`Copyright &copy; ${copyDate} Tezos. All rights reserved.`)}</p>
+        <SociaGroup title="Follow Us">
+          <LinkSocial
+            iconImage={TwitterLogo}
+            to="https://twitter.com"
+          />
+          <LinkSocial
+            iconImage={GitlabLogo}
+            to="https://twitter.com"
+          />
+          <LinkSocial
+            iconImage={RiotLogo}
+            to="https://twitter.com"
+          />
+        </SociaGroup>
+        <p>{(`Copyright \u00A9 ${copyDate} Tezos. All rights reserved.`)}</p>
         
       </div>
     </StyledFooter>

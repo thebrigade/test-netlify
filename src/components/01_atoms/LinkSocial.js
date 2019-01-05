@@ -8,18 +8,24 @@ const StyledButton = styled.a`
   display: block;
   border-radius: 100px;
   background: white;
-  padding: 3px;
+  padding: 5px;
+  position: relative;
+  bottom: 0;
+  transition:  all .4s;
+  &:hover{
+    bottom: 5px;
+  }
   img{
     display: block;
     width: 100%;
     height: auto;
+    filter: brightness(1.5) invert(1) sepia(1) saturate(1) hue-rotate(160deg);
   }
 `;
 
 
 class LinkSocial extends Component {
   static props = {
-    text: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
     iconImage: PropTypes.string.isRequired
   }
@@ -31,14 +37,9 @@ class LinkSocial extends Component {
     } = this.props;
 
     let props = {
-      title: text,
       href: to,
       target: "_blank"
     };
-
-    if(iconDirectionReverse) {
-      props.iconDirectionReverse = true
-    }
     
     return (
       <StyledButton {...props}>
