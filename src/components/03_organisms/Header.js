@@ -33,8 +33,8 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <Navigation>
-        <Button text="LEARN ABOUT TEZOS" to="https://google.com" external/>
-        <Button text="BUG BOUNTY" to="/get-started"/>
+        <Button text="LEARN ABOUT TEZOS" to="/learn-about-tezos" />
+        <Button text="BUG BOUNTY" to="/bug-bounty"/>
         <Button
           text="BLOG"
           to="/get-started"

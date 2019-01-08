@@ -6,7 +6,7 @@ import { COLOR_PRIMARY_HEADER } from '../../theme';
 import ReactHtmlParser from 'react-html-parser';
 
 const StyledHeroTitle = styled(Title)`
-  font-size: 4.8rem;
+  font-size: 5.6rem;
   width: 100%;
   padding-left: 30px;
 `;
@@ -26,11 +26,11 @@ const StyledTitleIcon = styled.div`
 const StyledHero = styled.div`
   width: 100%;
   max-width: ${p => p.proximity ? p.proximity : 1200}px;
-  padding: 100px 0;
+  padding: 150px 0;
   padding: ${p => p.icon ? '100px 0 100px 50px' : '100px 0'};
   overflow: hidden;
   p{
-    width: 40%;
+    width: ${p => p.sub && p.sub.length > 180 ? 60 : 40}%;
     float: right;
     line-height: 1.8;
     font-size: 1.8rem;
@@ -54,7 +54,7 @@ class Hero extends Component {
   render() {
     const { text, sub, proximity, icon } = this.props;
     return (
-      <StyledHero proximity={proximity} icon={icon}>
+      <StyledHero proximity={proximity} icon={icon} sub={sub}>
         <StyledTitleIcon>
           {typeof icon !== 'undefined' ? (<img src={icon} alt="header label" />) : null}
           <StyledHeroTitle text={ text }/>

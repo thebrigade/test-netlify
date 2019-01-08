@@ -38,6 +38,7 @@ const StyledBody = styled.div`
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 50px;
+    color: ${p => p.theme.paragraph.color}
   }
 `;
 
@@ -81,7 +82,7 @@ const Layout = ({ children }) => (
   />
 )
 
-Layout.propTypes = {
+Layout.props = {
   children: PropTypes.node.isRequired,
 }
 
