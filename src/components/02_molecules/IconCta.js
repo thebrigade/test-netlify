@@ -21,7 +21,7 @@ const StyledIconCTA = styled.a`
   img{
     margin-right: 20px;
     width: 100%;
-    max-width: 40px;
+    max-width: 57px;
     opacity: 1;
     transition: all .4s;
   }

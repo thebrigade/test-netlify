@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 import PropTypes from 'prop-types';
-
+import theme from '../../theme';
 
 
 const StyledSection = styled.div`
@@ -29,16 +29,20 @@ const StyledSection = styled.div`
     margin-bottom: 30px;
     text-transform: capitalize;
     font-size: 2.4rem;
+    color: ${p => p.theme.header.color}
   }
 `;
 
+
 const Section = (props) => (
-  <StyledSection column={props.gridColumn} border={props.border}>
-    {props.title ? (<h3>{props.title}</h3>) : null}
-    <div>
-      {props.children}
-    </div>
-  </StyledSection>
+  <ThemeProvider theme={theme}>
+    <StyledSection column={props.gridColumn} border={props.border} className={props.className}>
+      {props.title ? (<h3>{props.title}</h3>) : null}
+      <div>
+        {props.children}
+      </div>
+    </StyledSection>
+  </ThemeProvider>
 )
 
 Section.props = {
