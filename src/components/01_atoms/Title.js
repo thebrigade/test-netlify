@@ -7,12 +7,14 @@ import ReactHtmlParser from 'react-html-parser';
 const StyledTitle = styled.h2`
   font-weight: 300;
   color: ${p => p.theme ? p.theme.header.color : 'black'};
+  padding-left: ${p => p.pad ? p.pad : 0}px;
+  margin-bottom: 30px;
 `;
 
 const Title = (props) => {
   return (
     <ThemeProvider theme={theme}>
-    <StyledTitle className={props.className}>
+    <StyledTitle className={props.className} pad={props.pad}>
       {ReactHtmlParser(props.text)}
     </StyledTitle>
     </ThemeProvider>
@@ -21,11 +23,13 @@ const Title = (props) => {
 
 Title.props = {
   text: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  pad: PropTypes.number
 }
 
 Title.defaultProps = {
-  text: ''
+  text: '',
+  pad: 0
 }
 
 

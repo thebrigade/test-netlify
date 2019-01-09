@@ -7,19 +7,25 @@ import Hero from '../components/02_molecules/Hero';
 import Section from '../components/03_organisms/Section';
 import IconArticle from '../components/02_molecules/IconArticle';
 // icons
-import * as heroIcon from '../images/icons/hero-icon-io.svg';
 import * as IconScales from '../images/icons/icon-scale.svg';
 import * as IconNetwork from '../images/icons/icon-network.svg';
 import * as IconSecurity from '../images/icons/icon-lock.svg';
+import styled from 'styled-components';
 
+
+const StyleHomeTitle = styled(Title)`
+  font-size: 5.0rem;
+  max-width: 990px;
+  margin: 0 auto 80px;
+`;
 
 const IndexPage = (props) => (
   <Layout>
     <Hero
       text="Tezos is formalizing<br />blockchain governance"
-      sub="In Tezos, stakeholders<br /><a href='https://google.com'>govern</a> the protocol."
+      sub="In Tezos, stakeholders<br />govern the protocol."
     />
-    <Title text={props.t("header")} />
+    <StyleHomeTitle text={props.t("header")} pad={30} />
     <Section gridColumn={3}>
       <IconArticle 
         icon={IconScales}

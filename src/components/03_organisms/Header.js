@@ -10,7 +10,7 @@ import * as mediumImage from '../../images/icons/logo-medium.png';
 
 const StyledHeader = styled.div`
   margin-bottom: 1.45rem;
-  padding: 10px 20px;
+  padding: 30px 20px;
   & > div{
     margin: 0 auto;
     max-width: 1200px;

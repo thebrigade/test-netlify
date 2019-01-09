@@ -9,6 +9,7 @@ const StyledHeroTitle = styled(Title)`
   font-size: 5.6rem;
   width: 100%;
   padding-left: 30px;
+  margin-bottom: 0;
 `;
 
 const StyledTitleIcon = styled.div`
@@ -26,8 +27,7 @@ const StyledTitleIcon = styled.div`
 const StyledHero = styled.div`
   width: 100%;
   max-width: ${p => p.proximity ? p.proximity : 1200}px;
-  padding: 150px 0;
-  padding: ${p => p.icon ? '100px 0 100px 50px' : '100px 0'};
+  padding: ${p => p.icon ? '15vh 0 15vh 50px' : '15vh 0'};
   overflow: hidden;
   p{
     width: ${p => p.sub && p.sub.length > 180 ? 60 : 40}%;

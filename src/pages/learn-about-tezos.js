@@ -6,12 +6,17 @@ import Title from '../components/01_atoms/Title';
 import Hero from '../components/02_molecules/Hero';
 import Section from '../components/03_organisms/Section';
 import IconArticle from '../components/02_molecules/IconArticle';
+import styled from 'styled-components';
 // icons
 import * as heroIcon from '../images/icons/hero-icon-io.svg';
 import * as IconScales from '../images/icons/icon-scale.svg';
 import * as IconNetwork from '../images/icons/icon-network.svg';
 import * as IconSecurity from '../images/icons/icon-lock.svg';
-
+const StyleLearnTitle = styled(Title)`
+  font-size: 5.0rem;
+  max-width: 930px;
+  margin: 0 auto 80px;
+`;
 
 const IndexPage = (props) => (
   <Layout>
@@ -20,8 +25,8 @@ const IndexPage = (props) => (
       text="Learn more about Tezos. <br /> Get involved."
       sub="Tezos is a blockchain that can evolve by upgrading itself. Stakeholders vote on amendments to the protocol, including amendments to the voting procedure itself, to reach social consensus on proposals. Tezos supports smart contracts and offers a platform to build decentralized applications."
     />
-    <Title text={props.t("header")} />
-    <Section gridColumn={2} >
+    <StyleLearnTitle text="Overview" />
+    <Section gridColumn={2} border>
       <IconArticle 
         icon={IconScales}
         title="Self-Amendment"

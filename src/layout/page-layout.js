@@ -7,7 +7,7 @@ import Header from '../components/03_organisms/Header';
 import Footer from '../components/03_organisms/Footer';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme, {COLOR_FOOTER, COLOR_PRIMARY_LINK} from '../theme';
-
+import * as bodyImage from '../images/hero-bg.png';
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -33,11 +33,11 @@ const GlobalStyle = createGlobalStyle`
 `
 const StyledBody = styled.div`
   width: 100%;
-  background: white;
+  background: white url(${bodyImage}) no-repeat top center;
   .container{
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding: 0 20px 50px;
     color: ${p => p.theme.paragraph.color}
   }
 `;
