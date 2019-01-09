@@ -5,17 +5,24 @@ const StyledTabs = styled.ul`
   display: flex;
   align-items: stretch;
   list-style: none;
+  
   li{
     width: 100%;
     padding: 40px;
     background: #ebeff6;
     font-size: 2.4rem;
     font-weight: 300;
+    cursor: pointer;
+    transition: opacity .3s;
+    &:hover{
+      opacity: .75;
+    }
   }
 `
 
 const StyledTabsWrap = styled.div`
   padding: 40px;
+  background: #fff;
 `;
 
 

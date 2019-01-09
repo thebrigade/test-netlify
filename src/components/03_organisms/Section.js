@@ -24,13 +24,17 @@ const StyledSection = styled.div`
       justify-content: space-between;
     }
   }
-  h1{
-    margin: 0;
+  h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    font-size: 2.4rem;
   }
 `;
 
 const Section = (props) => (
   <StyledSection column={props.gridColumn} border={props.border}>
+    {props.title ? (<h3>{props.title}</h3>) : null}
     <div>
       {props.children}
     </div>

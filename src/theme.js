@@ -9,6 +9,9 @@ export const COLOR_PRIMARY_HEADER = '#123262';
 export const COLOR_FOOTER = '#1a2734';
 
 const theme = {
+  support: {
+    color: COLOR_PRIMARY_HEADER
+  },
   button: {
     color: COLOR_PRIMARY_LINK,
     background: 'none'

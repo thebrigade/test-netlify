@@ -12,7 +12,6 @@ import * as IconNetwork from '../images/icons/icon-network.svg';
 import * as IconSecurity from '../images/icons/icon-lock.svg';
 import styled from 'styled-components';
 
-
 const StyleHomeTitle = styled(Title)`
   font-size: 5.0rem;
   max-width: 990px;
@@ -26,6 +25,8 @@ const IndexPage = (props) => (
       sub="In Tezos, stakeholders<br />govern the protocol."
     />
     <StyleHomeTitle text={props.t("header")} pad={30} />
+    
+    
     <Section gridColumn={3}>
       <IconArticle 
         icon={IconScales}
