@@ -172,7 +172,7 @@ const SecondPage = () => (
             <article>
               <StyledTwoColMarkupTitle text="Help secure the ledger" />
               <Content>Take a look at these developer resources for specifics on how Tezos operates and stay up to date</Content>
-              <StyledSlackButton text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
+              <Button text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
             </article>
           </StyledTabSection>
           
@@ -180,7 +180,7 @@ const SecondPage = () => (
             <article>
               <StyledTwoColMarkupTitle text="Start writing smart contracts with Michelson" />
               <Content>Tezos smart contracts are written in Michelson, a domain-specific language which is stack based and strongly typed. Michelson was designed to facilitate formal verification, allowing users to prove properties of their contracts.</Content>
-              <StyledSlackButton text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
+              <Button text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
             </article>
           </StyledTabSection>
 
@@ -192,7 +192,7 @@ const SecondPage = () => (
             <article>
               <StyledTwoColMarkupTitle text="Help secure the ledger" />
               <Content>Tezos is implemented in OCaml, a powerful functional programming language offering speed and a rich set of libraries. OCaml is used by companies such as Bloomberg, Facebook, Jane Street Capital, and Docker in environments where safety is critical. Ocaml’s unambiguous syntax and semantic make Tezos a good candidate for formal proofs of correctness.</Content>
-              <StyledSlackButton text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
+              <Button text="test"  buttonBig/>
             </article>
           </StyledTabSection>
 
