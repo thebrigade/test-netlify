@@ -35,7 +35,7 @@ const StyledIconCTA = styled.a`
     color: ${p => p.theme.support.color};
   }
   &:hover{
-  ${StyledIconImage} {
+    ${StyledIconImage} {
       opacity: .8;
     }
   }

@@ -12,14 +12,12 @@ const StyledIconImage = styled.img`
 const StyledTwoColIconMarkup = styled.article`
   display: flex;
   align-items: flex-start;
-  & > div {
-    width: auto;
-  }
+  padding: 50px;
 `;
 
 const TwoColIconMarkup = (props) => {
   return (
-    <StyledTwoColIconMarkup>
+    <StyledTwoColIconMarkup className={props.className}>
       <StyledIconImage src={props.icon} alt="label" />
       <div>
         {props.children}

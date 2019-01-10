@@ -3,7 +3,7 @@ import styled, { ThemeProvider, css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { navigate } from "gatsby"
 import theme from '../../theme';
-
+import ReactHtmlParser from 'react-html-parser';
 
 const buttonStyle = (theme) => {
   return css`
@@ -22,7 +22,7 @@ const StyledButton = styled.a`
   text-decoration: none;
   line-height: 1;
   text-align: ${p => p.buttonModifier ? 'center' : 'left'};
-  border-radius: ${p => p.buttonModifier ? '25px' : '0px'};
+  border-radius: ${p => p.buttonModifier ? '100px' : '0px'};
   text-transform: ${p => p.inline ? 'normal' : 'uppercase'};
   font-weight: ${p => p.inline ? 'normal' : '500'};
   flex-direction: ${p => p.iconDirectionReverse ? 'row-reverse' : 'row'};
@@ -66,14 +66,16 @@ class Button extends Component {
       iconImage,
       iconDirectionReverse,
       iconSmall,
-      inline
+      inline,
+      className
     } = this.props;
 
     let props = {
       title: text,
       buttonModifier: buttonBig,
       inline: inline,
-      iconSmall: iconSmall
+      iconSmall: iconSmall,
+      className: className
     };
     
     if(external) {
@@ -94,7 +96,7 @@ class Button extends Component {
     return (
       <StyledButton {...props}>
         {typeof(iconImage) !== 'undefined' ? <img src={iconImage} alt="label"/> : null}
-        {text}
+        {ReactHtmlParser(text)}
       </StyledButton>
     )
   }

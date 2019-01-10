@@ -13,6 +13,30 @@ const StyledContent = styled.article`
       font-weight: 500;
     }
   }
+  ul li{
+    list-style: none;
+    margin-bottom: 10px;
+    padding-right: 20px;
+    overflow: hidden;
+    &:before{
+      content: "";
+      display: block;
+      position: relative;
+      top: 10px;
+      background-size: 10px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #8ba1cd;
+      float: left;
+      margin-right: 10px;
+    }
+    a{
+      font-size: 1.6rem;
+      text-decoration: none;
+    }
+  }
 `;
 
 const Content = (props) => {
