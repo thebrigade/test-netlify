@@ -1,0 +1,17 @@
+<svg width="77px" height="77px" viewBox="0 0 77 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="On-Ramp" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Store" transform="translate(-156.000000, -586.000000)">
+            <g id="Group-11" transform="translate(156.000000, 586.000000)">
+                <polygon id="Polygon" fill="#7691C4" opacity="0.300000012" points="38.5 0 77 38.5 38.5 77 0 38.5"></polygon>
+                <polygon id="Polygon" fill="#7691C4" opacity="0.8" transform="translate(38.500000, 36.071262) scale(-1, 1) translate(-38.500000, -36.071262) " points="38.5 7.19626168 71.841978 64.9462617 5.15802195 64.9462617"></polygon>
+                <rect id="Rectangle-9" fill="#FFFFFF" opacity="0.75" transform="translate(43.505607, 48.368380) rotate(45.000000) translate(-43.505607, -48.368380) " x="41.3467289" y="46.2095015" width="4.31775701" height="4.31775701"></rect>
+                <rect id="Rectangle-9" fill="#FFFFFF" transform="translate(40.452492, 51.421495) rotate(45.000000) translate(-40.452492, -51.421495) " x="38.2936137" y="49.2626168" width="4.31775701" height="4.31775701"></rect>
+                <rect id="Rectangle-9" fill="#FFFFFF" transform="translate(37.399377, 54.474611) rotate(45.000000) translate(-37.399377, -54.474611) " x="35.2404984" y="52.3157321" width="4.31775701" height="4.31775701"></rect>
+                <rect id="Rectangle-9" fill="#FFFFFF" opacity="0.8" transform="translate(34.346262, 51.421495) rotate(45.000000) translate(-34.346262, -51.421495) " x="32.1873832" y="49.2626168" width="4.31775701" height="4.31775701"></rect>
+                <rect id="Rectangle-9" fill="#FFFFFF" opacity="0.649999976" transform="translate(31.293146, 48.368380) rotate(45.000000) translate(-31.293146, -48.368380) " x="29.1342679" y="46.2095015" width="4.31775701" height="4.31775701"></rect>
+                <rect id="Rectangle-9" fill="#FFFFFF" opacity="0.450000018" transform="translate(28.240031, 45.315265) rotate(45.000000) translate(-28.240031, -45.315265) " x="26.0811526" y="43.1563863" width="4.31775701" height="4.31775701"></rect>
+                <rect id="Rectangle-9" fill="#FFFFFF" opacity="0.5" transform="translate(46.558723, 45.315265) rotate(45.000000) translate(-46.558723, -45.315265) " x="44.3998442" y="43.1563863" width="4.31775701" height="4.31775701"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

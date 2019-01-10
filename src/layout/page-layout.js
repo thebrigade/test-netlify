@@ -72,7 +72,7 @@ const Layout = ({ children }) => (
             <Header siteTitle={data.site.siteMetadata.title} />
             <div className="container">
               {children}
-              <LanguageSwitcher />
+              {/* <LanguageSwitcher /> */}
             </div>
           </StyledBody>
           <Footer />
