@@ -10,6 +10,8 @@ const StyledLanguageSwitcher = styled.div`
   h5{
     font-weight: 300;
     text-transform: uppercase;
+    width: 50px;
+    text-align: center;
     cursor: pointer;
   }
   ul{

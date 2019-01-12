@@ -4,6 +4,8 @@ import LinkSocial from '../01_atoms/LinkSocial';
 import SociaGroup from '../02_molecules/SocialGroup';
 import LanguageSwitcher from '../LanguageSwitcher';
 import theme from '../../theme';
+import '../i18n';
+import { withNamespaces } from 'react-i18next';
 import * as TwitterLogo from '../../images/icons/social-icon-twitter.svg';
 import * as GitlabLogo from '../../images/icons/social-icon-gitlab.svg';
 import * as RiotLogo from '../../images/icons/social-icon-riot.svg';
@@ -25,12 +27,20 @@ const StyledFooter = styled.footer`
     margin: 0;
   }
 `;
+const StyledRightCol = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  p{
+    margin-right: 20px;
+  }
+`;
 const copyDate = new Date().getFullYear();
 const Footer = (props) => (
   <ThemeProvider theme={theme}>
     <StyledFooter>
       <div>
-        <SociaGroup title="Follow Us">
+        <SociaGroup title={props.t("nav.bottom.follow")}>
           <LinkSocial
             iconImage={TwitterLogo}
             to="https://twitter.com"
@@ -44,11 +54,13 @@ const Footer = (props) => (
             to="https://twitter.com"
           />
         </SociaGroup>
-        <p>{(`Copyright \u00A9 ${copyDate} Tezos. All rights reserved.`)}</p>
-        <LanguageSwitcher/>
+        <StyledRightCol>
+          <p>{props.t("nav.bottom.copyright", {date: copyDate})}</p>
+          <LanguageSwitcher/>
+        </StyledRightCol>
       </div>
     </StyledFooter>
   </ThemeProvider>
 )
 
-export default Footer
+export default withNamespaces()(Footer)

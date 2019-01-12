@@ -1,5 +1,16 @@
 {
-  "header" : "Tezos es una nueva plataforma para contratos inteligentes y aplicaciones descentralizadas.",
+  "nav":{
+    "top":{
+      "link1": "APRENDER SOBRE TEZOS",
+      "link2": "INSECTO GENEROSIDAD",
+      "link3": "BLOG",
+      "link4": "EMPEZANDO"
+    },
+    "bottom":{
+      "follow": "Síguenos:",
+      "copyright": "Derechos de autor \u00A9 {{date}} Tezos. Todos los derechos reservados."
+    }
+  },
   "index" : {
     "hero" : {
       "text" : "Tezos está formalizando <br /> la gobernanza de la cadena de bloques",

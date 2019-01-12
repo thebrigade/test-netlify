@@ -1,5 +1,16 @@
 {
-  "header" : "Tezos is a new platform for smart contracts and decentralized applications.",
+  "nav":{
+    "top":{
+      "link1": "LEARN ABOUT TEZOS",
+      "link2": "BUG BOUNTY",
+      "link3": "BLOG",
+      "link4":  "GETTING STARTED" 
+    },
+    "bottom":{
+      "follow": "Follow us:",
+      "copyright": "Copyright \u00A9 {{date}} Tezos. All rights reserved."
+    }
+  },
   "index" : {
     "hero" : {
       "text" : "Tezos is formalizing<br />blockchain governance",
