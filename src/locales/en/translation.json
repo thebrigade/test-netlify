@@ -1,4 +1,22 @@
 {
-  "header":"Tezos is a new platform for smart contracts and decentralized applications.",
-  "body":"hello more"
+  "header" : "Tezos is a new platform for smart contracts and decentralized applications.",
+  "index" : {
+    "hero" : {
+      "text" : "Tezos is formalizing<br />blockchain governance",
+      "sub" : "In Tezos, stakeholders<br />govern the protocol."
+    },
+    "title1" : "Tezos is a new platform for smart contracts and decentralized applications.",
+    "cta1" : {
+      "title" : "On-Chain Governance",
+      "copy" : "The Tezos protocol offers a formal process through which stakeholders can efficiently govern the protocol and implement future innovations."
+    },
+    "cta2" : {
+      "title" : "Security",
+      "copy" : "The Tezos blockchain was designed to facilitate formal verification, which helps secure smart contracts and avoid buggy code."
+    },
+    "cta3" : {
+      "title" : "Proof-of-Stake",
+      "copy" : "Tezos’ unique proof-of-stake consensus algorithm gives every stakeholder the opportunity to participate in the validation of transactions on the network and be rewarded by the protocol for doing so."
+    }
+  }
 }

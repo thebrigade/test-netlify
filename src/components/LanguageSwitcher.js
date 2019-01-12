@@ -1,6 +1,40 @@
 import React, { Component } from "react";
 import classNames from "classnames";
 import { withNamespaces } from "react-i18next";
+import styled from 'styled-components';
+
+const StyledLanguageSwitcher = styled.div`
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  h5{
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  ul{
+    background: #fff;
+    position: absolute;
+    width: 200px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  ul,li{
+    list-style: none;
+    text-align: center;
+  }
+  li a{
+    text-decoration: none;
+    displaY: block;
+    font-weight: 300;
+    padding: 10px;
+  }
+`;
+
+const StyledMenu = styled.ul`
+  display: ${p => p.show ? 'block' : 'none'};
+`;
 
 class LanguageSwitcher extends Component {
   state = {
@@ -9,7 +43,10 @@ class LanguageSwitcher extends Component {
   constructor(props) {
     super(props)
     const { i18n } = this.props
-    this.state = { language: i18n.language }
+    this.state = { 
+      language: i18n.language,
+      showMenu: false
+    }
 
     this.handleChangeLanguage = this.handleChangeLanguage.bind(this)
   }
@@ -18,7 +55,6 @@ class LanguageSwitcher extends Component {
     const { i18n } = this.props;
     i18n.changeLanguage(lng);
     this.setState({ language: i18n.language });
-    // console.log(i18n);
   }
 
   renderLanguageChoice({ code, label }) {
@@ -27,27 +63,42 @@ class LanguageSwitcher extends Component {
     })
 
     return (
-      <button
-        key={code}
-        className={buttonClass}
-        onClick={() => this.handleChangeLanguage(code)}
-      >
-        {label}
-      </button>
+      <li>
+        <a
+          href="#"
+          key={code}
+          className={buttonClass}
+          onClick={
+            (e) => {
+              this.handleChangeLanguage(code);
+              this.showMenu();
+              e.preventDefault();
+            }
+          }
+        >
+          {label}
+        </a>
+      </li>
     )
   }
-
+  showMenu() {
+    this.setState({
+      showMenu: this.state.showMenu ? false : true
+    })
+  }
   render() {
     const languages = [
-      { code: "en", label: "English" },
-      { code: "klingon", label: "Klingon" },
+      { code: "en", label: "English (English)" },
+      { code: "esp", label: "Espanol (Spanish)" },
     ]
 
     return (
-      <div className="LanguageSwitcher">
-        active language: {this.state.language}
-        {languages.map(language => this.renderLanguageChoice(language))}
-      </div>
+      <StyledLanguageSwitcher>
+        <h5 onClick={() => this.showMenu() }>{this.state.language}</h5> 
+        <StyledMenu show={this.state.showMenu}>
+          {languages.map(language => this.renderLanguageChoice(language))}
+        </StyledMenu>
+      </StyledLanguageSwitcher>
     )
   }
 }

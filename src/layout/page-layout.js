@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import LanguageSwitcher from '../components/LanguageSwitcher';
 import Header from '../components/03_organisms/Header';
 import Footer from '../components/03_organisms/Footer';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
@@ -72,7 +71,6 @@ const Layout = ({ children }) => (
             <Header siteTitle={data.site.siteMetadata.title} />
             <div className="container">
               {children}
-              {/* <LanguageSwitcher /> */}
             </div>
           </StyledBody>
           <Footer />

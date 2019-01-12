@@ -1,0 +1,22 @@
+{
+  "header" : "Tezos es una nueva plataforma para contratos inteligentes y aplicaciones descentralizadas.",
+  "index" : {
+    "hero" : {
+      "text" : "Tezos está formalizando <br /> la gobernanza de la cadena de bloques",
+      "sub" : "En Tezos, las partes interesadas <br /> gobiernan el protocolo."
+    },
+    "title1" : "Tezos es una nueva plataforma para contratos inteligentes y aplicaciones descentralizadas.",
+    "cta1" : {
+      "title" : "Gobernanza en cadena",
+      "copy" : "El protocolo Tezos ofrece un proceso formal a través del cual los interesados pueden gobernar el protocolo de manera eficiente e implementar futuras innovaciones."
+    },
+    "cta2" : {
+      "title" : "Seguridad",
+      "copy" : "La cadena de bloques de Tezos fue diseñada para facilitar la verificación formal, lo que ayuda a asegurar contratos inteligentes y evitar el código de buggy."
+    },
+    "cta3" : {
+      "title" : "Prueba de estaca",
+      "copy" : "El algoritmo de consenso de prueba de juego único de Tezos le brinda a cada parte interesada la oportunidad de participar en la validación de transacciones en la red y ser recompensado por el protocolo por hacerlo."
+    }
+  }
+}

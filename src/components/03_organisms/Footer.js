@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components';
 import LinkSocial from '../01_atoms/LinkSocial';
 import SociaGroup from '../02_molecules/SocialGroup';
+import LanguageSwitcher from '../LanguageSwitcher';
 import theme from '../../theme';
 import * as TwitterLogo from '../../images/icons/social-icon-twitter.svg';
 import * as GitlabLogo from '../../images/icons/social-icon-gitlab.svg';
@@ -44,7 +45,7 @@ const Footer = (props) => (
           />
         </SociaGroup>
         <p>{(`Copyright \u00A9 ${copyDate} Tezos. All rights reserved.`)}</p>
-        
+        <LanguageSwitcher/>
       </div>
     </StyledFooter>
   </ThemeProvider>

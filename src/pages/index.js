@@ -21,27 +21,27 @@ const StyleHomeTitle = styled(Title)`
 const IndexPage = (props) => (
   <Layout>
     <Hero
-      text="Tezos is formalizing<br />blockchain governance"
-      sub="In Tezos, stakeholders<br />govern the protocol."
+      text={props.t("index.hero.text")}
+      sub={props.t("index.hero.sub")}
     />
-    <StyleHomeTitle text={props.t("header")} pad={30} />
+    <StyleHomeTitle text={props.t("index.title1")} pad={30} />
     
     
     <Section gridColumn={3}>
       <IconArticle 
         icon={IconScales}
-        title="On-Chain Governance"
-        copy="The Tezos protocol offers a formal process through which stakeholders can efficiently govern the protocol and implement future innovations."
+        title={props.t("index.cta1.title")}
+        copy={props.t("index.cta1.copy")}
       />
       <IconArticle 
         icon={IconSecurity}
-        title="Security"
-        copy="The Tezos blockchain was designed to facilitate formal verification, which helps secure smart contracts and avoid buggy code."
+        title={props.t("index.cta2.title")}
+        copy={props.t("index.cta2.copy")}
       />
       <IconArticle 
         icon={IconNetwork}
-        title="Proof-of-Stake"
-        copy="Tezos’ unique proof-of-stake consensus algorithm gives every stakeholder the opportunity to participate in the validation of transactions on the network and be rewarded by the protocol for doing so."
+        title={props.t("index.cta3.title")}
+        copy={props.t("index.cta3.copy")}
       />
     </Section>
   </Layout>
