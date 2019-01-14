@@ -20,21 +20,24 @@ const StyledGroup = styled.div`
   img{
     display: inline-block;
     width: 20%;
-    max-width: 80px;
-    min-width: 70px;
+    max-width: ${p => p.small ? '80' : '40'}px;
+    min-width: 40px;
     margin-right: 30px;
+  }
+  p{
+    font-size: ${p => p.small ? '1.6' : '1.8'}rem;
   }
 `;
 
 const IconArticle = (props) => {
   return (
     <ThemeProvider theme={theme}>
-      <StyledGroup>
+      <StyledGroup >
         <img src={props.icon} alt="label" />
         <div>
           <StyledArticleTitle text={props.title} />
           <Content>
-            {props.copy}
+            <p>{props.copy}</p>
           </Content>
         </div>
       </StyledGroup>
@@ -45,7 +48,12 @@ const IconArticle = (props) => {
 IconArticle.props = {
   icon: PropTypes.string.isRequired,
   copy: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  small: PropTypes.bool
+}
+
+IconArticle.defaultProps = {
+  small: false
 }
 
 export default IconArticle;

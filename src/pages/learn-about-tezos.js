@@ -12,15 +12,21 @@ import TwoColIconMarkup from '../components/03_organisms/TwoColIconMarkup';
 
 // icons
 import * as heroIcon from '../images/icons/hero-icon-io.svg';
-import * as IconScales from '../images/icons/icon-scale.svg';
-import * as IconNetwork from '../images/icons/icon-network.svg';
-import * as IconSecurity from '../images/icons/icon-lock.svg';
+import * as IconPlus from '../images/icons/icon-plus-circle.jpg';
+import * as IconCheckSquare from '../images/icons/icon-check-square.jpg';
+import * as IconSquares from '../images/icons/icon-squares-square.jpg';
+
+import * as IconPaperSqare from '../images/icons/icon-paper-square.jpg';
+import * as IconCheckCircle from '../images/icons/icon-check-circle.jpg';
+import * as IconPyramid from '../images/icons/icon-pyramid-circle.jpg';
+
+
 import * as IconLearn from '../images/icons/icon-developer_resources.svg';
 
 const StyleLearnTitle = styled(Title)`
-  font-size: 5.0rem;
+  font-size: 3.6rem;
   max-width: 930px;
-  margin: 0 auto 80px;
+  margin: 100px auto 40px;
 `;
 
 const StyledTabSection = styled(Section)`
@@ -46,32 +52,44 @@ const IndexPage = (props) => (
   <Layout>
     <Hero
       icon={heroIcon}
-      text="Learn more about Tezos. <br /> Get involved."
-      sub="Tezos is a blockchain that can evolve by upgrading itself. Stakeholders vote on amendments to the protocol, including amendments to the voting procedure itself, to reach social consensus on proposals. Tezos supports smart contracts and offers a platform to build decentralized applications."
+      text={props.t('learn.hero.text')}
+      sub={props.t('learn.hero.sub')}
     />
-    <StyleLearnTitle text="Overview" />
+    <StyleLearnTitle text={props.t('learn.title1')} />
     <Section gridColumn={2} border>
       <IconArticle 
-        icon={IconScales}
-        title="Self-Amendment"
-        copy="Self-amendment allows Tezos to upgrade itself without having to split (“fork”) the network into two different blockchains. This is important as the suggestion or expectation of a fork can divide the community, alter stakeholder incentives, and disrupt the network effects that are formed over time. Because of self-amendment, coordination and execution costs for protocol upgrades are reduced and future innovations can be seamlessly implemented."
+        icon={IconPlus}
+        title={props.t('learn.learnblock1.title')}
+        copy={props.t('learn.learnblock1.copy')}
       />
       <IconArticle 
-        icon={IconSecurity}
-        title="On-Chain Governance"
-        copy="In Tezos, all stakeholders can participate in governing the protocol. The election cycle provides a formal and systematic procedure for stakeholders to reach agreement on proposed protocol amendments. By combining this on-chain mechanism with self-amendment, Tezos can change this initial election process to adopt better governance mechanisms when they are discovered."
+        icon={IconCheckSquare}
+        title={props.t('learn.learnblock2.title')}
+        copy={props.t('learn.learnblock2.copy')}
+      />
+    </Section>
+    <Section gridColumn={2} border>
+      <IconArticle 
+        icon={IconSquares}
+        title={props.t('learn.learnblock3.title')}
+        copy={props.t('learn.learnblock3.copy')}
+      />
+      <IconArticle 
+        icon={IconPaperSqare}
+        title={props.t('learn.learnblock4.title')}
+        copy={props.t('learn.learnblock4.copy')}
       />
     </Section>
     <Section gridColumn={2}>
       <IconArticle 
-        icon={IconScales}
-        title="On-Chain Governance"
-        copy="The Tezos protocol offers a formal process through which stakeholders can efficiently govern the protocol and implement future innovations."
+        icon={IconCheckCircle}
+        title={props.t('learn.learnblock5.title')}
+        copy={props.t('learn.learnblock5.copy')}
       />
       <IconArticle 
-        icon={IconSecurity}
-        title="Security"
-        copy="The Tezos blockchain was designed to facilitate formal verification, which helps secure smart contracts and avoid buggy code."
+        icon={IconPyramid}
+        title={props.t('learn.learnblock6.title')}
+        copy={props.t('learn.learnblock6.copy')}
       />
     </Section>
     <StyledTwoColIconMarkup icon={IconLearn}>

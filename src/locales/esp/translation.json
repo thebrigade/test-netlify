@@ -29,5 +29,8 @@
       "title" : "Prueba de estaca",
       "copy" : "El algoritmo de consenso de prueba de juego único de Tezos le brinda a cada parte interesada la oportunidad de participar en la validación de transacciones en la red y ser recompensado por el protocolo por hacerlo."
     }
+  },
+  "learn":{
+
   }
 }
