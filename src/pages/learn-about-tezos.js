@@ -9,7 +9,7 @@ import IconArticle from '../components/02_molecules/IconArticle';
 import styled from 'styled-components';
 import Content from '../components/02_molecules/Content';
 import TwoColIconMarkup from '../components/03_organisms/TwoColIconMarkup';
-
+import Button from '../components/01_atoms/Button';
 // icons
 import * as heroIcon from '../images/icons/hero-icon-io.svg';
 import * as IconPlus from '../images/icons/icon-plus-circle.jpg';
@@ -20,18 +20,23 @@ import * as IconPaperSqare from '../images/icons/icon-paper-square.jpg';
 import * as IconCheckCircle from '../images/icons/icon-check-circle.jpg';
 import * as IconPyramid from '../images/icons/icon-pyramid-circle.jpg';
 
-
+import * as PaperWhite from '../papers/white_paper.pdf';
+import * as PaperPosition from '../papers/position_paper.pdf';
 import * as IconLearn from '../images/icons/icon-developer_resources.svg';
 
 const StyleLearnTitle = styled(Title)`
   font-size: 3.6rem;
-  max-width: 930px;
+  max-width: 980px;
   margin: 100px auto 40px;
 `;
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
   padding: 0;
+  & > div{
+    display: flex;
+    justify-content: space-between;
+  }
 `
 
 const StyledTwoColMarkupTitle = styled(Title)`
@@ -42,6 +47,7 @@ const StyledTwoColMarkupTitle = styled(Title)`
 
 const StyledTwoColIconMarkup = styled(TwoColIconMarkup)`
   padding: 10px;
+  width: 50%;
   img{
     max-width: 80px;
     margin-right: 30px;
@@ -54,6 +60,33 @@ const StyledLinkGrid = styled.ul`
   flex-wrap: wrap;
   width: 500px;
   li{width: 50%; margin-bottom: 10px;}
+`;
+
+const StyledArticleBlock = styled.article`
+  flex-shrink: 0;
+  width: 40%;
+  padding: 40px 50px;
+  background-color: #f0f3f9;
+  a{
+    margin-bottom: 20px;
+  }
+`
+
+const StyledSpecialLayout = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position:relative;
+`;
+
+const StyledArticleTitle = styled(Title)`
+  font-size: 2.0rem;
+  font-weight: 400;
+`;
+
+const StyledSpecialButtons = styled(Button)`
+  font-weight: 300;
+  text-transform: none;
 `;
 
 const IndexPage = (props) => (
@@ -100,35 +133,37 @@ const IndexPage = (props) => (
         copy={props.t('learn.learnblock6.copy')}
       />
     </Section>
-    <StyledTwoColIconMarkup icon={IconLearn}>
-
-      <StyledTwoColMarkupTitle text="Developer Resources" />
-      <Content>Take a look at these developer resources for specifics on how Tezos operates.</Content>
-      <StyledTabSection gridColumn={2}>
-        <article>
-          <Content>
-            <StyledLinkGrid>
-              <li>
-                <a href="https://tezos.gitlab.io/master/" target="_blank">Developer Documentation</a>
-              </li>
-              <li>
-                <a href="https://gitlab.com/tezos/tezos" target="_blank">Gitlab</a>
-              </li>
-              <li>
-                <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank">Developer Chat Room</a>
-              </li>
-              <li>
-                <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank">Developer Mailing List</a>
-              </li>
-            </StyledLinkGrid>
-          </Content>
-        </article>
-        <article>
-          <Title text="Hardware Wallets for Baking" />
-        </article>
-      </StyledTabSection>
-
-    </StyledTwoColIconMarkup>
+    <StyledSpecialLayout>
+      <StyledTwoColIconMarkup icon={IconLearn}>
+        <StyledTwoColMarkupTitle text={props.t('learn.title2')} />
+        <Content>Take a look at these developer resources for specifics on how Tezos operates.</Content>
+        <StyledTabSection gridColumn={2}>
+          <article>
+            <Content>
+              <StyledLinkGrid>
+                <li>
+                  <a href="https://tezos.gitlab.io/master/" target="_blank">Developer Documentation</a>
+                </li>
+                <li>
+                  <a href="https://gitlab.com/tezos/tezos" target="_blank">Gitlab</a>
+                </li>
+                <li>
+                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank">Developer Chat Room</a>
+                </li>
+                <li>
+                  <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank">Developer Mailing List</a>
+                </li>
+              </StyledLinkGrid>
+            </Content>
+          </article>
+        </StyledTabSection>
+      </StyledTwoColIconMarkup>
+      <StyledArticleBlock>
+        <StyledArticleTitle text={props.t('learn.title3')} />
+        <StyledSpecialButtons text="Download White Paper" to={PaperWhite} external buttonBig/>
+        <StyledSpecialButtons text="Download Position Paper" to={PaperPosition} external buttonBig/>
+      </StyledArticleBlock>
+    </StyledSpecialLayout>
   </Layout>
 )
 

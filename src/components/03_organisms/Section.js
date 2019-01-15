@@ -7,7 +7,6 @@ import theme from '../../theme';
 const StyledSection = styled.div`
   margin-bottom: 1.45rem;
   padding: 10px 20px;
-  background: white;
   width: 100%;
   & > div{
     margin: 0 auto;

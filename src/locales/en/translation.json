@@ -36,6 +36,8 @@
       "sub" : "Tezos is a blockchain that can evolve by upgrading itself. Stakeholders vote on amendments to the protocol, including amendments to the voting procedure itself, to reach social consensus on proposals. Tezos supports smart contracts and offers a platform to build decentralized applications."
     },
     "title1" : "Overview",
+    "title2" : "Developer Resources",
+    "title3" : "Read the White Paper and<br />Position Paper to learn more.",
     "learnblock1" : {
       "title" : "Self-Amendment",
       "copy" : "Self-amendment allows Tezos to upgrade itself without having to split (“fork”) the network into two different blockchains. This is important as the suggestion or expectation of a fork can divide the community, alter stakeholder incentives, and disrupt the network effects that are formed over time. Because of self-amendment, coordination and execution costs for protocol upgrades are reduced and future innovations can be seamlessly implemented."
@@ -59,6 +61,13 @@
     "learnblock6" : {
       "title" : "Delegation",
       "copy" : "In PoS, a security deposit is required to participate in the consensus process. As in proof-of-work, the consensus protocol relies on an honest majority for its security which is incentivized directly by the Tezos protocol by penalizing dishonest behavior and rewarding honest behavior. If a participant behaves dishonestly, they can lose their deposit. Users who do not wish to participate directly in the consensus protocol have the option to delegate their rights to other users to participate on their behalf."
-    }
+    },
+    "resourcescopy": "Take a look at these developer resources for specifics on how Tezos operates.",
+    "button1" : "Developer Documentation",
+    "button2" : "Gitlab",
+    "button3" : "Developer Chat Room",
+    "button4" : "Developer Mailing List",
+    "button5" : "Download White Paper",
+    "button6" : "Download Position Paper"
   }
 }

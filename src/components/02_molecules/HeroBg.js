@@ -14,8 +14,8 @@ const StyledBgContainer = styled.div`
 	top: 0;
 	left: 0;
 	z-index: 0;
-	width: 100vw;
-	height: 120vh;
+	width: 100%;
+	height: 1000px;
 	min-height: 738px;
 	overflow-x: hidden;
 `;
@@ -25,7 +25,7 @@ const StyledBgImage = styled.img`
 	top: 0;
 	left: 50%;
 	transform: translate3d(-50%, 0, 0);
-	height: 120vh;
+	height: 100%;
 	min-height: 738px;
   z-index: 1;
 `;

@@ -25,12 +25,12 @@ const StyledHero = styled(Hero)`
 `
 const IndexPage = (props) => (
   <LayoutHome>
+
     <StyledHero
       text={props.t("index.hero.text")}
       sub={props.t("index.hero.sub")}
     />
     <StyleHomeTitle text={props.t("index.title1")} pad={30} />
-    
     
     <Section gridColumn={3}>
       <IconArticle 
