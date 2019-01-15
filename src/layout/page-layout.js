@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
 const StyledBody = styled.div`
   width: 100%;
   background: white url(${bodyImage}) no-repeat top center;
+  background-size: 100% auto;
   .container{
     max-width: 1200px;
     margin: 0 auto;

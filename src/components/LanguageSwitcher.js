@@ -67,7 +67,7 @@ class LanguageSwitcher extends Component {
     return (
       <li key={code}>
         <a
-          href="#"
+          href="/"
           key={code}
           className={buttonClass}
           onClick={

@@ -75,7 +75,8 @@ class Button extends Component {
       buttonModifier: buttonBig,
       inline: inline,
       iconSmall: iconSmall,
-      className: className
+      className: className,
+      rel: "noopener noreferrer"
     };
     
     if(external) {

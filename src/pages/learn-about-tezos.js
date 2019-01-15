@@ -142,16 +142,16 @@ const IndexPage = (props) => (
             <Content>
               <StyledLinkGrid>
                 <li>
-                  <a href="https://tezos.gitlab.io/master/" target="_blank">Developer Documentation</a>
+                  <a href="https://tezos.gitlab.io/master/" target="_blank" rel="noopener noreferrer">Developer Documentation</a>
                 </li>
                 <li>
-                  <a href="https://gitlab.com/tezos/tezos" target="_blank">Gitlab</a>
+                  <a href="https://gitlab.com/tezos/tezos" target="_blank" rel="noopener noreferrer">Gitlab</a>
                 </li>
                 <li>
-                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank">Developer Chat Room</a>
+                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank" rel="noopener noreferrer">Developer Chat Room</a>
                 </li>
                 <li>
-                  <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank">Developer Mailing List</a>
+                  <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank" rel="noopener noreferrer">Developer Mailing List</a>
                 </li>
               </StyledLinkGrid>
             </Content>

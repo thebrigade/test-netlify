@@ -150,10 +150,10 @@ const SecondPage = () => (
               <Content>
                 <ul>
                   <li>
-                    <a href="http://tezos.gitlab.io/mainnet/whitedoc/proof_of_stake.html" target="_blank">Proof-of-stake documentation for Tezos</a>
+                    <a href="http://tezos.gitlab.io/mainnet/whitedoc/proof_of_stake.html" target="_blank" rel="noopener noreferrer">Proof-of-stake documentation for Tezos</a>
                   </li>
                   <li>
-                    <a href="https://medium.com/tezos/its-a-baker-s-life-for-me-c214971201e1" target="_blank">"It's a Baker's Life for me: being a Tezos validator"</a>
+                    <a href="https://medium.com/tezos/its-a-baker-s-life-for-me-c214971201e1" target="_blank" rel="noopener noreferrer">"It's a Baker's Life for me: being a Tezos validator"</a>
                   </li>
                 </ul>
               </Content>
@@ -226,7 +226,7 @@ const SecondPage = () => (
           <List listIndex={3}>
             <Title text="Check Your Contribution"/>
             <Content>
-              <p>Recommended allocations from the fundraiser must be activated before they can be accessed. A contributor may activate the recommended allocation of a given public key hash by using the Activation Tool. This tool may also reveal the blinded key of the given public key hash. Blinded keys, not public key hashes, are the keys that appear in the genesis block proposed by the Foundation, which may be found <a href="https://tezos.foundation/wp-content/uploads/2018/09/5223213-genesis.txt" target="_blank">here</a>.</p>
+              <p>Recommended allocations from the fundraiser must be activated before they can be accessed. A contributor may activate the recommended allocation of a given public key hash by using the Activation Tool. This tool may also reveal the blinded key of the given public key hash. Blinded keys, not public key hashes, are the keys that appear in the genesis block proposed by the Foundation, which may be found <a href="https://tezos.foundation/wp-content/uploads/2018/09/5223213-genesis.txt" target="_blank" rel="noopener noreferrer">here</a>.</p>
               <p>A balance for a public key hash that was recommended an allocation will not appear on a Tezos block explorer until it has been activated. After a contributor has activated its recommended allocation, it may view the “Store and Use” page for information regarding storing and using its Tezos tokens (“tez”).</p>
             </Content>
             <Button text="Activate" to="https://activate.tezos.com/" external buttonBig/>

@@ -17,6 +17,7 @@ const StyleHomeTitle = styled(Title)`
   font-size: 5.0rem;
   max-width: 990px;
   margin: 0 auto 80px;
+  padding-left: 0;
 `;
 
 const StyledHero = styled(Hero)`

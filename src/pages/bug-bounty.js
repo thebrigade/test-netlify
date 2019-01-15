@@ -2,10 +2,7 @@ import React from 'react'
 import Layout from '../layout/page-layout'
 import '../components/i18n'
 import { withNamespaces } from 'react-i18next'
-import Title from '../components/01_atoms/Title'
 import Hero from '../components/02_molecules/Hero'
-import Section from '../components/03_organisms/Section'
-import IconArticle from '../components/02_molecules/IconArticle'
 // icons
 import * as heroIcon from '../images/icons/icon-hero-bugbounty.png'
 

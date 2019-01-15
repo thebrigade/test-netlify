@@ -19,9 +19,6 @@ const StyledTabButton = styled.button`
 `;
 
 class TabButton extends Component {
-  constructor(props) {
-    super(props);
-  }
   clickBack() {
     const { callback, index } = this.props;
     callback(index);

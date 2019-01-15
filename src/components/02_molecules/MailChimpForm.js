@@ -99,12 +99,12 @@ class MailChimpForm extends Component {
   }
   formSubmit(e){
     const self = this;
-    const formData = new FormData(this.formRef);
     const emailValue = this.emailRef.current.value;
+    
+    // mailchimp api sucks
+    // const formData = new FormData(this.formRef);
     // formData.append('EMAIL', this.emailRef.current.value);
-
     // let object =  {};
-
     // formData.forEach(function(value, key){
     //     object[key] = value;
     // });

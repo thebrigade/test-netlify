@@ -6,7 +6,6 @@ import Header from '../components/03_organisms/Header';
 import Footer from '../components/03_organisms/Footer';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme, {COLOR_FOOTER, COLOR_PRIMARY_LINK} from '../theme';
-import * as bodyImage from '../images/hero-bg.png';
 import HeroBg from '../components/02_molecules/HeroBg';
 
 const GlobalStyle = createGlobalStyle`
