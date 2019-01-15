@@ -12,6 +12,8 @@ import { withNamespaces } from 'react-i18next';
 const StyledHeader = styled.div`
   margin-bottom: 1.45rem;
   padding: 30px 20px;
+  position: relative;
+  z-index: 99;
   & > div{
     margin: 0 auto;
     max-width: 1200px;

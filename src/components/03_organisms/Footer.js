@@ -44,14 +44,17 @@ const Footer = (props) => (
           <LinkSocial
             iconImage={TwitterLogo}
             to="https://twitter.com"
+            external
           />
           <LinkSocial
             iconImage={GitlabLogo}
             to="https://twitter.com"
+            external
           />
           <LinkSocial
             iconImage={RiotLogo}
             to="https://twitter.com"
+            external
           />
         </SociaGroup>
         <StyledRightCol>

@@ -48,6 +48,14 @@ const StyledTwoColIconMarkup = styled(TwoColIconMarkup)`
   }
 `;
 
+const StyledLinkGrid = styled.ul`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 500px;
+  li{width: 50%; margin-bottom: 10px;}
+`;
+
 const IndexPage = (props) => (
   <Layout>
     <Hero
@@ -99,7 +107,7 @@ const IndexPage = (props) => (
       <StyledTabSection gridColumn={2}>
         <article>
           <Content>
-            <ul>
+            <StyledLinkGrid>
               <li>
                 <a href="https://tezos.gitlab.io/master/" target="_blank">Developer Documentation</a>
               </li>
@@ -112,7 +120,7 @@ const IndexPage = (props) => (
               <li>
                 <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank">Developer Mailing List</a>
               </li>
-            </ul>
+            </StyledLinkGrid>
           </Content>
         </article>
         <article>

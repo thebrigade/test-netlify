@@ -65,7 +65,7 @@ class LanguageSwitcher extends Component {
     })
 
     return (
-      <li>
+      <li key={code}>
         <a
           href="#"
           key={code}

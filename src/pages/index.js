@@ -1,11 +1,12 @@
 import React from 'react'
-import Layout from '../layout/page-layout';
+import LayoutHome from '../layout/page-layout-home';
 import '../components/i18n';
 import { withNamespaces } from 'react-i18next';
 import Title from '../components/01_atoms/Title';
 import Hero from '../components/02_molecules/Hero';
 import Section from '../components/03_organisms/Section';
 import IconArticle from '../components/02_molecules/IconArticle';
+import MailChimpForm from '../components/02_molecules/MailChimpForm';
 // icons
 import * as IconScales from '../images/icons/icon-scale.svg';
 import * as IconNetwork from '../images/icons/icon-network.svg';
@@ -18,9 +19,13 @@ const StyleHomeTitle = styled(Title)`
   margin: 0 auto 80px;
 `;
 
+const StyledHero = styled(Hero)`
+  margin-bottom: 180px;
+  margin-top: 50px;
+`
 const IndexPage = (props) => (
-  <Layout>
-    <Hero
+  <LayoutHome>
+    <StyledHero
       text={props.t("index.hero.text")}
       sub={props.t("index.hero.sub")}
     />
@@ -44,7 +49,8 @@ const IndexPage = (props) => (
         copy={props.t("index.cta3.copy")}
       />
     </Section>
-  </Layout>
+    <MailChimpForm />
+  </LayoutHome>
 )
 
 export default withNamespaces()(IndexPage)

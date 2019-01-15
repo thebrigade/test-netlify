@@ -71,18 +71,21 @@ const SecondPage = () => (
               title="Galleon Wallet"
               to="https://galleon-wallet.tech/"
               icon={IconGalleon}
+              external
             />
             <IconCta
               platforms={['macOS','Windows','Web','Android']}
               title="Tezbox"
               to="https://tezbox.com/"
               icon={IconTezbox}
+              external
             />
             <IconCta
               platforms={['Web']}
               title="Kukai"
               to="https://kukai.app/"
               icon={IconKukai}
+              external
             />
           </StyledTabSection>
           <StyledTabSection title="Hardware Wallets">
@@ -91,11 +94,13 @@ const SecondPage = () => (
               title="Ledger"
               to="https://www.ledger.com/"
               icon={IconObsidian}
+              external
             />
             <IconCta
               title="Trezor"
               to="https://trezor.io/"
               icon={IconTrezor}
+              external
             />
           </StyledTabSection>
           <StyledTabSection title="Command Line">
@@ -103,6 +108,7 @@ const SecondPage = () => (
               title="Tezos CLI"
               to="https://tezos.gitlab.io/master/api/cli-commands.html"
               icon={IconCLI}
+              external
             />
           </StyledTabSection>
           <Disclaimer>

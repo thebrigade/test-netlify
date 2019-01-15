@@ -52,9 +52,9 @@ class Hero extends Component {
     text: ''
   }
   render() {
-    const { text, sub, proximity, icon } = this.props;
+    const { text, sub, proximity, icon, className } = this.props;
     return (
-      <StyledHero proximity={proximity} icon={icon} sub={sub}>
+      <StyledHero proximity={proximity} icon={icon} sub={sub} className={className}>
         <StyledTitleIcon>
           {typeof icon !== 'undefined' ? (<img src={icon} alt="header label" />) : null}
           <StyledHeroTitle text={ text }/>
