@@ -42,18 +42,18 @@ const Footer = (props) => (
       <div>
         <SociaGroup title={props.t("nav.bottom.follow")}>
           <LinkSocial
-            iconImage={TwitterLogo}
-            to="https://twitter.com"
+            iconImage={RiotLogo}
+            to="https://riot.im/app/#/room/%23tezos:matrix.org"
             external
           />
           <LinkSocial
             iconImage={GitlabLogo}
-            to="https://twitter.com"
+            to="https://gitlab.com/tezos/tezos"
             external
           />
           <LinkSocial
-            iconImage={RiotLogo}
-            to="https://twitter.com"
+            iconImage={TwitterLogo}
+            to="https://twitter.com/tezos"
             external
           />
         </SociaGroup>

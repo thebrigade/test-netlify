@@ -98,38 +98,46 @@ class MailChimpForm extends Component {
     this.emailRef = React.createRef();
   }
   formSubmit(e){
+    const self = this;
     const formData = new FormData(this.formRef);
-    formData.append('EMAIL', this.emailRef.current.value);
-    formData.append('b_80b9a27c332a234b4cac5c13b_d8f4b4112e', '');
-    formData.append('u', '80b9a27c332a234b4cac5c13b&id=d8f4b4112e');
+    const emailValue = this.emailRef.current.value;
+    // formData.append('EMAIL', this.emailRef.current.value);
 
-    let object =  {};
+    // let object =  {};
 
-    formData.forEach(function(value, key){
-        object[key] = value;
-    });
+    // formData.forEach(function(value, key){
+    //     object[key] = value;
+    // });
 
-    const json = JSON.stringify(object);
+    const url = `https://tezos.us6.list-manage.com/subscribe/post?u=80b9a27c332a234b4cac5c13b&id=d8f4b4112e&c=jQuery190005915435378856371_1547518496493&EMAIL=${emailValue}&b_80b9a27c332a234b4cac5c13b_d8f4b4112e=&subscribe=Submit&_=1547517311464`;
 
-    fetch('https://tezos.us6.list-manage.com/subscribe/post?u=80b9a27c332a234b4cac5c13b&id=d8f4b4112e',{
-      method: 'POST',
-      body: json
-    })
-    .then(function(response) {
-      console.log(response);
-      return response.json();
-    })
-    .then(function(myJson) {
+    fetch(url,
+      {
+        mode: 'no-cors'
+      }
+    ).then(function(response) {
+      const ryGetJson = async (response) => {
+        console.log(response);
+        return new Promise((resolve) => {
+          if (response) {
+            response.json().then(json => resolve(json)).catch(() => resolve(null))
+          } else {
+            resolve(null)
+          }
+        })
+      }
+      return ryGetJson;
+    }).then(function(myJson) {
       const obj = JSON.stringify(myJson);
-      if (obj.status === 'success'){
-        this.setState(
+      if (typeof obj === 'object' && obj.status === 'success'){
+        self.setState(
           {
             status: 'success',
             message: 'Thank you for subscribing!'
           }
         )
       } else {
-        this.setState(
+        self.setState(
           {
             status: 'error',
             message: 'sorry that email address is already submitted'
@@ -152,7 +160,7 @@ class MailChimpForm extends Component {
           </StyledLabel>
           <StyledEmailWrap status={this.state.status}>
             <StyledEmailField type="email" placeholder="Email" ref={this.emailRef}/>
-            <p>hello world</p>
+            <p>{this.state.message}</p>
           </StyledEmailWrap>
           
           <StyledSubmit type="submit"/>
