@@ -94,27 +94,66 @@ class MailChimpForm extends Component {
   constructor(props){
     super(props);
     this.state = { status: 'ready', message: 'nothing to see here' }
+    this.formRef = React.createRef();
+    this.emailRef = React.createRef();
   }
   formSubmit(e){
-    console.log(e);
     this.setState(
       {
         status: 'success',
         message: 'Thank you for subscribing!'
       }
     )
+    
+    const formData = new FormData(this.formRef);
+    formData.append('EMAIL', this.emailRef.current.value);
+    formData.append('b_80b9a27c332a234b4cac5c13b_d8f4b4112e', '');
+    formData.append('u', '80b9a27c332a234b4cac5c13b&id=d8f4b4112e');
+    let object =  {};
+    formData.forEach(function(value, key){
+        object[key] = value;
+    });
+    const json = JSON.stringify(object);
+    fetch('https://tezos.us6.list-manage.com/subscribe/post?u=80b9a27c332a234b4cac5c13b&id=d8f4b4112e',{
+      method: 'POST',
+      body: json
+    })
+    .then(function(response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function(myJson) {
+      const obj = JSON.stringify(myJson);
+      if (obj.status === 'success'){
+        this.setState(
+          {
+            status: 'success',
+            message: 'Thank you for subscribing!'
+          }
+        )
+      } else {
+        this.setState(
+          {
+            status: 'error',
+            message: 'sorry that email address is already submitted'
+          }
+        )
+      }
+      console.log(JSON.stringify(myJson));
+    })
+    .catch(error => console.error('Error:', error));
     e.preventDefault();
   }
   render() {
     return (
-      <form onSubmit={(e) => this.formSubmit(e)}>
+      <form onSubmit={(e) => this.formSubmit(e)} ref={this.formRef}>
         <StyledFormContainer>
           <StyledLabel>
             <img className="icon" src={iconNewsletter} alt="Email" />
             <StyledLabelTitle>Join our newsletter</StyledLabelTitle>
           </StyledLabel>
           <StyledEmailWrap status={this.state.status}>
-            <StyledEmailField type="email" placeholder="Email" />
+            <StyledEmailField type="email" placeholder="Email" ref={this.emailRef}/>
             <p>hello world</p>
           </StyledEmailWrap>
           
