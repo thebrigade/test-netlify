@@ -36,7 +36,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-gatsby": "^0.1.6",
     "prettier": "^1.15.2",
+    "raw-loader": "^1.0.0",
     "react-html-parser": "^2.0.2"
   },
   "repository": {

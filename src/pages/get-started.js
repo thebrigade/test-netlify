@@ -13,6 +13,7 @@ import Content from '../components/02_molecules/Content';
 import Disclaimer from '../components/01_atoms/Disclaimer';
 import Button from '../components/01_atoms/Button';
 import List from '../components/02_molecules/List';
+import ButtonGroup from '../components/02_molecules/ButtonGroup';
 
 import * as IconGalleon from '../images/icons/icn-galleon-wallet.png';
 import * as IconKukai from '../images/icons/icn-kukai.png';
@@ -27,6 +28,8 @@ import * as IconCode from '../images/icons/hdr-code.svg';
 import * as IconFolder from '../images/icons/hdr-folder.svg';
 import * as IconArrow from '../images/icons/icon-arrow-right.svg';
 import * as IconCheck from '../images/icons/hdr-check.svg';
+import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
+import * as IconTezos from '../images/icons/icn-tezos-circle.png';
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
@@ -49,6 +52,12 @@ const StyledSlackButton = styled(Button)`
   line-height: 1.4;
 `;
 
+const StyledSmallIconbutton = styled(Button)`
+  padding: 15px 30px 15px 15px;
+  img{
+    margin: 0 10px 0 0;
+  }
+`;
 
 const SecondPage = () => (
   <Layout>
@@ -177,31 +186,41 @@ const SecondPage = () => (
           <StyledTabSection gridColumn={1}>
             <article>
               <StyledTwoColMarkupTitle text="Help secure the ledger" />
-              <Content>Take a look at these developer resources for specifics on how Tezos operates and stay up to date</Content>
-              <Button text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
+              <Content><p>Take a look at these developer resources for specifics on how Tezos operates and stay up to date</p></Content>
+              <ButtonGroup>
+                <StyledSmallIconbutton text="<span>Documentation</span>" to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
+                <StyledSmallIconbutton text="<span>Tezos Gitlab</span>" to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
+                <Button text="Chat Room (Matrix)" to="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" buttonBig smallTxt inverse external/>
+                <Button text="Mailing List" to="https://groups.google.com/forum/#!forum/tezos-developer-community" buttonBig smallTxt inverse external/>
+              </ButtonGroup>
+              
             </article>
           </StyledTabSection>
           
           <StyledTabSection gridColumn={1}>
             <article>
               <StyledTwoColMarkupTitle text="Start writing smart contracts with Michelson" />
-              <Content>Tezos smart contracts are written in Michelson, a domain-specific language which is stack based and strongly typed. Michelson was designed to facilitate formal verification, allowing users to prove properties of their contracts.</Content>
-              <Button text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
+              <Content><p>Tezos smart contracts are written in Michelson, a domain-specific language which is stack based and strongly typed. Michelson was designed to facilitate formal verification, allowing users to prove properties of their contracts.</p></Content>
+              <ButtonGroup>
+                <Button text="Michelson Documentation" to="http://tezos.gitlab.io/mainnet/whitedoc/michelson.html" buttonBig smallTxt external/>
+              </ButtonGroup>
             </article>
           </StyledTabSection>
 
         </TwoColIconMarkup>
 
         <TwoColIconMarkup icon={IconFolder}>
-
           <StyledTabSection gridColumn={1}>
             <article>
               <StyledTwoColMarkupTitle text="Help secure the ledger" />
-              <Content>Tezos is implemented in OCaml, a powerful functional programming language offering speed and a rich set of libraries. OCaml is used by companies such as Bloomberg, Facebook, Jane Street Capital, and Docker in environments where safety is critical. Ocaml’s unambiguous syntax and semantic make Tezos a good candidate for formal proofs of correctness.</Content>
-              <Button text="test"  buttonBig/>
+              <Content><p>Tezos is implemented in OCaml, a powerful functional programming language offering speed and a rich set of libraries. OCaml is used by companies such as Bloomberg, Facebook, Jane Street Capital, and Docker in environments where safety is critical. Ocaml’s unambiguous syntax and semantic make Tezos a good candidate for formal proofs of correctness.</p></Content>
+              <ButtonGroup>
+                <Button text="What is OCaml?" to="https://ocaml.org/learn/description.html" buttonBig smallTxt external/>
+                <Button text="Try OCaml" to="https://try.ocamlpro.com/" buttonBig smallTxt inverse external/>
+                <Button text="Real-world OCaml" to="https://realworldocaml.org/" buttonBig smallTxt inverse external/>
+              </ButtonGroup>
             </article>
           </StyledTabSection>
-
         </TwoColIconMarkup>
 
       </Tab>
@@ -211,25 +230,31 @@ const SecondPage = () => (
           <List listIndex={1}>
             <Title text="Check Your Contribution"/>
             <Content>
-              Click on the "Check Your Contribution" button below to check the recommended allocation of a given public key hash. Contributors may find their public key hashes on the PDF documents they created during the Foundation's fundraiser.
+              <p>Click on the "Check Your Contribution" button below to check the recommended allocation of a given public key hash. Contributors may find their public key hashes on the PDF documents they created during the Foundation's fundraiser.</p>
             </Content>
-            <Button text="Check Your Contribution" to="https://check.tezos.com/" external buttonBig/>
+            <ButtonGroup>
+              <Button text="Check Your Contribution" to="https://check.tezos.com/" external buttonBig smallTxt external/>
+            </ButtonGroup>
           </List>
           <List listIndex={2}>
             <Title text="Obtain Your Activation Code"/>
             <Content>
-              Activation codes are required to access the recommended allocations of the corresponding public key hashes. In order to obtain these codes, contributors must complete the Foundation’s Know Your Customer / Anti-Money Laundering (“KYC/AML”) process. Contributors who have not completed this process may do so now.
+              <p>Activation codes are required to access the recommended allocations of the corresponding public key hashes. In order to obtain these codes, contributors must complete the Foundation’s Know Your Customer / Anti-Money Laundering (“KYC/AML”) process. Contributors who have not completed this process may do so now.</p>
             </Content>
-            <Button text="Begin KYC/AML" to="https://verification.tezos.com/" external buttonBig/>
-            <Button text="KYC/AML FAQ" to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig/>
+            <ButtonGroup>
+              <Button text="Begin KYC/AML" to="https://verification.tezos.com/" external buttonBig smallTxt external/>
+              <Button text="KYC/AML FAQ" to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse external/>
+            </ButtonGroup>
           </List>
           <List listIndex={3}>
-            <Title text="Check Your Contribution"/>
+            <Title text="Activate Your Recommended Allocation"/>
             <Content>
-              <p>Recommended allocations from the fundraiser must be activated before they can be accessed. A contributor may activate the recommended allocation of a given public key hash by using the Activation Tool. This tool may also reveal the blinded key of the given public key hash. Blinded keys, not public key hashes, are the keys that appear in the genesis block proposed by the Foundation, which may be found <a href="https://tezos.foundation/wp-content/uploads/2018/09/5223213-genesis.txt" target="_blank" rel="noopener noreferrer">here</a>.</p>
+              <p>Recommended allocations from the fundraiser must be activated before they can be accessed. A contributor may activate the recommended allocation of a given public key hash by using the Activation Tool. This tool may also reveal the blinded key of the given public key hash. Blinded keys, not public key hashes, are the keys that appear in the genesis block proposed by the Foundation, which may be found <a href="https://tezos.foundation/wp-content/uploads/2018/09/5223213-genesis.txt" target="_blank" rel="noopener noreferrer">here</a></p>
               <p>A balance for a public key hash that was recommended an allocation will not appear on a Tezos block explorer until it has been activated. After a contributor has activated its recommended allocation, it may view the “Store and Use” page for information regarding storing and using its Tezos tokens (“tez”).</p>
             </Content>
-            <Button text="Activate" to="https://activate.tezos.com/" external buttonBig/>
+            <ButtonGroup>
+              <Button text="Activate" to="https://activate.tezos.com/" external buttonBig smallTxt external/>
+            </ButtonGroup>
           </List>
         </TwoColIconMarkup>
       </Tab>

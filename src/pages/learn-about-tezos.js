@@ -136,22 +136,22 @@ const IndexPage = (props) => (
     <StyledSpecialLayout>
       <StyledTwoColIconMarkup icon={IconLearn}>
         <StyledTwoColMarkupTitle text={props.t('learn.title2')} />
-        <Content>Take a look at these developer resources for specifics on how Tezos operates.</Content>
+        <Content>{props.t('learn.resourcescopy')}</Content>
         <StyledTabSection gridColumn={2}>
           <article>
             <Content>
               <StyledLinkGrid>
                 <li>
-                  <a href="https://tezos.gitlab.io/master/" target="_blank" rel="noopener noreferrer">Developer Documentation</a>
+                  <a href="https://tezos.gitlab.io/master/" target="_blank" rel="noopener noreferrer">{props.t('learn.button1')}</a>
                 </li>
                 <li>
-                  <a href="https://gitlab.com/tezos/tezos" target="_blank" rel="noopener noreferrer">Gitlab</a>
+                  <a href="https://gitlab.com/tezos/tezos" target="_blank" rel="noopener noreferrer">{props.t('learn.button2')}</a>
                 </li>
                 <li>
-                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank" rel="noopener noreferrer">Developer Chat Room</a>
+                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank" rel="noopener noreferrer">{props.t('learn.button3')}</a>
                 </li>
                 <li>
-                  <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank" rel="noopener noreferrer">Developer Mailing List</a>
+                  <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank" rel="noopener noreferrer">{props.t('learn.button4')}</a>
                 </li>
               </StyledLinkGrid>
             </Content>
@@ -160,8 +160,8 @@ const IndexPage = (props) => (
       </StyledTwoColIconMarkup>
       <StyledArticleBlock>
         <StyledArticleTitle text={props.t('learn.title3')} />
-        <StyledSpecialButtons text="Download White Paper" to={PaperWhite} external buttonBig/>
-        <StyledSpecialButtons text="Download Position Paper" to={PaperPosition} external buttonBig/>
+        <StyledSpecialButtons text={props.t('learn.button5')} to={PaperWhite} external buttonBig/>
+        <StyledSpecialButtons text={props.t('learn.button6')} to={PaperPosition} external buttonBig/>
       </StyledArticleBlock>
     </StyledSpecialLayout>
   </Layout>

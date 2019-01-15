@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import theme from '../../theme';
+import theme, { COLOR_PRIMARY_LINK } from '../../theme';
 
 const StyledContent = styled.article`
   line-height: 1.8;
@@ -9,9 +9,12 @@ const StyledContent = styled.article`
   p{
     margin-bottom: 30px;
     strong{
-      color: ${p => p.theme.header.color}
+      color: ${p => p.theme.header.color};
       font-weight: 500;
     }
+  }
+  a, a:visited{
+    color: ${COLOR_PRIMARY_LINK}
   }
   ul li{
     list-style: none;
@@ -32,9 +35,11 @@ const StyledContent = styled.article`
       float: left;
       margin-right: 10px;
     }
-    a{
+    a, a:visited{
       font-size: 1.6rem;
       text-decoration: none;
+      margin: 0;
+      color: ${COLOR_PRIMARY_LINK}
     }
   }
 `;

@@ -6,34 +6,44 @@ import theme from '../../theme';
 import ReactHtmlParser from 'react-html-parser';
 
 const buttonStyle = (theme) => {
-  return css`
+  const regularStyle = css`
     background: ${theme.background};
     color: ${theme.color};
     &:visited{
       color: ${theme.color};
     }
-  `
+  `;
+  const inverseStyle = css`
+    background: none;
+    color: black;
+    border: 2px solid black;
+  `;
+  return p => p.inverse ? inverseStyle : regularStyle;
 }
 
 const StyledButton = styled.a`
-  ${p => p.buttonModifier ? buttonStyle(p.theme.buttonBig) : buttonStyle(p.theme.button)};
+  ${p => p.buttonModifier ? buttonStyle(p.theme.buttonBig, p) : buttonStyle(p.theme.button)};
   padding: ${p => p.buttonModifier ? '17px 40px' : '0px'};
   display: flex;
   text-decoration: none;
   line-height: 1;
+  font-weight: 300;
   text-align: ${p => p.buttonModifier ? 'center' : 'left'};
   border-radius: ${p => p.buttonModifier ? '100px' : '0px'};
-  text-transform: ${p => p.inline ? 'normal' : 'uppercase'};
-  font-weight: ${p => p.inline ? 'normal' : '500'};
+  text-transform: ${p => p.smallTxt ? 'normal' : 'uppercase'};
   flex-direction: ${p => p.iconDirectionReverse ? 'row-reverse' : 'row'};
   align-items: center;
   justify-content: space-around;
+  opacity: 1;
   img{
     margin: 0 10px;
     display: block;
     width: 100%;
     height: auto;
     max-width: ${p => p.iconSmall ? 14 : 25}px;
+  }
+  &:hover{
+    opacity: .8;
   }
 `;
 
@@ -47,14 +57,18 @@ class Button extends Component {
     iconDirectionReverse: PropTypes.bool,
     iconImage: PropTypes.string,
     inline: PropTypes.bool,
-    iconSmall: PropTypes.bool
+    iconSmall: PropTypes.bool,
+    smallTxt: PropTypes.bool,
+    inverse: PropTypes.bool
   }
 
   static defaultProps = {
     external: false,
     buttonBig: false,
     iconDirectionReverse: false,
-    iconSmall: false
+    iconSmall: false,
+    smallTxt: false,
+    inverse: false
   }
 
   createButton() {
@@ -67,7 +81,9 @@ class Button extends Component {
       iconDirectionReverse,
       iconSmall,
       inline,
-      className
+      className,
+      smallTxt,
+      inverse
     } = this.props;
 
     let props = {
@@ -76,7 +92,9 @@ class Button extends Component {
       inline: inline,
       iconSmall: iconSmall,
       className: className,
-      rel: "noopener noreferrer"
+      rel: "noopener noreferrer",
+      smallTxt: smallTxt,
+      inverse: inverse
     };
     
     if(external) {

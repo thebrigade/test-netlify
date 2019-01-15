@@ -7,12 +7,6 @@ const StyledList = styled.div`
   margin-bottom: 40px;
   padding: 60px 90px;
   background-color: #f5f9fe;
-  a{
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: 300;
-    margin-right: 20px;
-  }
 `;
 
 const StyledListIndex = styled.span`

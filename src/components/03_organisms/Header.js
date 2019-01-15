@@ -26,6 +26,9 @@ const StyledHeader = styled.div`
     margin: 0;
   }
 `;
+const StyledButton = styled(Button)`
+  font-weight: 500;
+`;
 
 const Header = (props) => (
   <StyledHeader>
@@ -45,7 +48,7 @@ const Header = (props) => (
           iconDirectionReverse
           iconSmall
         />
-        <Button text={props.t('nav.top.link4')} to="/get-started" buttonBig/>
+        <StyledButton text={props.t('nav.top.link4')} to="/get-started" buttonBig/>
       </Navigation>
     </div>
   </StyledHeader>

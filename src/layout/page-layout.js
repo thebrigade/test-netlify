@@ -26,9 +26,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     background: ${COLOR_FOOTER};
   }
-  a, a:visited{
-    color: ${COLOR_PRIMARY_LINK};
-  }
 `
 const StyledBody = styled.div`
   width: 100%;
