@@ -98,22 +98,19 @@ class MailChimpForm extends Component {
     this.emailRef = React.createRef();
   }
   formSubmit(e){
-    this.setState(
-      {
-        status: 'success',
-        message: 'Thank you for subscribing!'
-      }
-    )
-    
     const formData = new FormData(this.formRef);
     formData.append('EMAIL', this.emailRef.current.value);
     formData.append('b_80b9a27c332a234b4cac5c13b_d8f4b4112e', '');
     formData.append('u', '80b9a27c332a234b4cac5c13b&id=d8f4b4112e');
+
     let object =  {};
+
     formData.forEach(function(value, key){
         object[key] = value;
     });
+
     const json = JSON.stringify(object);
+
     fetch('https://tezos.us6.list-manage.com/subscribe/post?u=80b9a27c332a234b4cac5c13b&id=d8f4b4112e',{
       method: 'POST',
       body: json
@@ -142,6 +139,7 @@ class MailChimpForm extends Component {
       console.log(JSON.stringify(myJson));
     })
     .catch(error => console.error('Error:', error));
+    
     e.preventDefault();
   }
   render() {
