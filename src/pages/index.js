@@ -29,7 +29,7 @@ const IndexPage = (props) => (
 
     <StyledHero
       text={props.t("index.hero.text")}
-      sub={props.t("indegatx.hero.sub")}
+      sub={props.t("index.hero.sub")}
     />
     <StyleHomeTitle text={props.t("index.title1")} pad={30} />
     
