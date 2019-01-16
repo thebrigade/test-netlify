@@ -52,7 +52,7 @@ const StyledNavGroup = styled.div`
       li{
         margin: 0 60px 0 0;
         &:last-child{margin: 0;}
-        a{margin: 0; max-width: auto;}
+        a{margin: 0; max-width: auto; font-size: 1.6rem;}
       }
     }
   }
