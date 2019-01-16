@@ -22,6 +22,10 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
     align-items: center;
     padding: 100px 0;
+    @media screen and (max-width: 768px) {
+      display: block;
+      text-align: center;
+    }
   }
   h1{
     margin: 0;

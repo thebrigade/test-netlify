@@ -39,9 +39,9 @@ const Header = (props) => (
         </Link>
       </h1>
       <Navigation>
-        <Button text={props.t('nav.top.link1')} to="/learn-about-tezos" />
-        <Button text={props.t('nav.top.link2')} to="/bug-bounty"/>
-        <Button
+        <StyledButton text={props.t('nav.top.link1')} to="/learn-about-tezos" />
+        <StyledButton text={props.t('nav.top.link2')} to="/bug-bounty"/>
+        <StyledButton
           text={props.t('nav.top.link3')}
           to="/get-started"
           iconImage={mediumImage} 

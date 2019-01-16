@@ -7,6 +7,7 @@ import Footer from '../components/03_organisms/Footer';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme, {COLOR_FOOTER, COLOR_PRIMARY_LINK} from '../theme';
 import HeroBg from '../components/02_molecules/HeroBg';
+import * as favicon from '../images/favicon.png';
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -67,6 +68,7 @@ const LayoutHome = ({ children }) => (
             ]}
           >
             <html lang="en" />
+            <link rel="shortcut icon" href={favicon} />
             <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500" rel="stylesheet"/>
           </Helmet>
           
