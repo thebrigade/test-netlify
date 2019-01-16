@@ -7,6 +7,7 @@ const StyledHamburger = styled.button`
   position: relative;
   width: 25px;
   height: 15px;
+  background: none;
   &:before, &:after{content: '';}
   &:before, &:after{
     display: block;
@@ -72,14 +73,9 @@ class Hamburger extends Component {
   }
   toggleMenu() {
     const { onToggle } = this.props
-    const { open } = this.state;
 
-    if(open) {
-      this.setState({open: false})
-    } else {
-      this.setState({open: true});
-    }
-    onToggle(this); 
+    this.setState({open: this.state.open ? false : true}, () => onToggle(this))
+    
   }
   render() {
     const { open } = this.state;

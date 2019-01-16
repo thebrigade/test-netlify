@@ -38,6 +38,13 @@ const StyledRightCol = styled.div`
   p{
     margin-right: 20px;
   }
+  @media screen and (max-width: 768px) {
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    p{margin-bottom: 20px; margin-right: 0;}
+  }
 `;
 const copyDate = new Date().getFullYear();
 const Footer = (props) => (

@@ -35,6 +35,7 @@ const StyledBody = styled.div`
   width: 100%;
   position: relative;
   background-color: #fff;
+  overflow: hidden;
   .container{
     max-width: 1200px;
     margin: 0 auto;

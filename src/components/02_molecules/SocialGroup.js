@@ -24,6 +24,19 @@ const StyledSocialGroup = styled.div`
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+    h4{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    ul{
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
 `;
 
 const createLinks = (children) => {
