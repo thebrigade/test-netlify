@@ -75,5 +75,28 @@
       "text":"Bug Bounty Program",
       "sub":"From the outset, the code base underpinning the Tezos protocol has been engineered with security in mind. Although no system can be completely secure, every system can be continuously improved towards that goal. HackerOne, a San Francisco-based cybersecurity company, will deploy and manage a bug bounty program in an effort to steadily improve the overall security of Tezos. <br /><br /> Bug bounties offer an attractive way for potential security vulnerabilities to be reported. A bounty payout will depend on the severity of the disclosed vulnerability. In order to encourage responsible disclosure, researchers who point out potential vulnerabilities will not face legal action provided they make a best effort approach to report their findings and comply with the terms of the program.<br /><br /> Hackers participating in the bug bounty program should send all findings to <a href='mailTo:security@tezos.com' class='crypto-email' rel='nofollow'>security@tezos.com</a>. If required, a PGP key can be found <a href={{pgpkey}} rel='nofollow'>here</a>. The fingerprint for this key is: 578B 1B85 C560 80C7 D5B4  2E41 F919 CA02 9854 A530."
     }
+  },
+  "getstarted": {
+    "hero":{
+      "text":"Getting Started with Tezos"
+    },
+    "tab1":{
+      "label":"Store and Use",
+      "title1":"Store and use Tez",
+      "title2":"Software Wallets",
+      "title3":"Hardware Wallets",
+      "title4":"Command Line",
+      "content1":"<p>Holding Tezos tokens (“tez”) enables one to interact with the Tezos blockchain. There are many wallets with which to store and use tez. Wallets listed below have undergone at least one independent external security audit.</p> <p>Always remember: <strong>if you do not control your private keys, you do not control your tokens</strong>. Every user should make sure to exercise extreme care and take all available safety precautions when entering private key information anywhere. Any party or software, such as a wallet, that gains knowledge of private key information will have access to the tez controlled by the corresponding public key hash.</p> <p><strong>Note: Contributors to the Tezos Foundation’s fundraiser can get started via the Activate tab</strong></p",
+      "disclaimer":"<p>*These links for wallets are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval by the Tezos Foundation of any of the products or services provided by those sites. The Tezos Foundation bears no responsibility for the accuracy, legality or content of the external sites or for that of subsequent links, or for the performance or lack thereof of any wallets provided by those sites. Contact the external site for answers to questions regarding its content.</p>"
+    },
+    "tab2":{
+      "label":"Bake"
+    },
+    "tab3":{
+      "label":"Build"
+    },
+    "tab4":{
+      "label":"Activate"
+    }
   }
 }

@@ -14,6 +14,9 @@ import Disclaimer from '../components/01_atoms/Disclaimer';
 import Button from '../components/01_atoms/Button';
 import List from '../components/02_molecules/List';
 import ButtonGroup from '../components/02_molecules/ButtonGroup';
+import '../components/i18n';
+import { withNamespaces } from 'react-i18next';
+import ReactHtmlParser from 'react-html-parser';
 
 import * as IconGalleon from '../images/icons/icn-galleon-wallet.png';
 import * as IconKukai from '../images/icons/icn-kukai.png';
@@ -59,22 +62,20 @@ const StyledSmallIconbutton = styled(Button)`
   }
 `;
 
-const SecondPage = () => (
+const GetStarted = (props) => (
   <Layout>
     <Hero
       icon={HeroIcon}
-      text="Getting Started with Tezos"
+      text={props.t("getstarted.hero.text")}
     />
     <SectionTabs>
-      <Tab tabLabel="Store and Use">
+      <Tab tabLabel={props.t("getstarted.tab1.label")}>
         <TwoColIconMarkup icon={IconStore}>
-          <StyledTwoColMarkupTitle text="Store and use Tez" />
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab1.title1")} />
           <Content>
-            <p>Holding Tezos tokens (“tez”) enables one to interact with the Tezos blockchain. There are many wallets with which to store and use tez. Wallets listed below have undergone at least one independent external security audit.</p>
-            <p>Always remember: <strong>if you do not control your private keys, you do not control your tokens</strong>. Every user should make sure to exercise extreme care and take all available safety precautions when entering private key information anywhere. Any party or software, such as a wallet, that gains knowledge of private key information will have access to the tez controlled by the corresponding public key hash.</p>
-            <p><strong>Note: Contributors to the Tezos Foundation’s fundraiser can get started via the Activate tab</strong></p>
+            {ReactHtmlParser(props.t("getstarted.tab1.content1"))}
           </Content>
-          <StyledTabSection title="Software Wallets">
+          <StyledTabSection title={props.t("getstarted.tab1.title2")}>
             <IconCta
               platforms={['macOS','Windows','Linux']}
               title="Galleon Wallet"
@@ -97,7 +98,7 @@ const SecondPage = () => (
               external
             />
           </StyledTabSection>
-          <StyledTabSection title="Hardware Wallets">
+          <StyledTabSection title={props.t("getstarted.tab1.title3")}>
             <IconCta
               platforms={['Obsidian Systems']}
               title="Ledger"
@@ -112,7 +113,7 @@ const SecondPage = () => (
               external
             />
           </StyledTabSection>
-          <StyledTabSection title="Command Line">
+          <StyledTabSection title={props.t("getstarted.tab1.title4")}>
             <IconCta
               title="Tezos CLI"
               to="https://tezos.gitlab.io/master/api/cli-commands.html"
@@ -121,12 +122,12 @@ const SecondPage = () => (
             />
           </StyledTabSection>
           <Disclaimer>
-            <p>*These links for wallets are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval by the Tezos Foundation of any of the products or services provided by those sites. The Tezos Foundation bears no responsibility for the accuracy, legality or content of the external sites or for that of subsequent links, or for the performance or lack thereof of any wallets provided by those sites. Contact the external site for answers to questions regarding its content.</p>
+            {props.t('getstarted.tab1.disclaimer')}
           </Disclaimer>
         </TwoColIconMarkup>
         
       </Tab>
-      <Tab tabLabel="Bake">
+      <Tab tabLabel={props.t("getstarted.tab2.label")}>
         <TwoColIconMarkup icon={IconBaking}>
           <StyledTwoColMarkupTitle text="Help secure the ledger" />
           <Content>
@@ -180,7 +181,7 @@ const SecondPage = () => (
 
         </TwoColIconMarkup>
       </Tab>
-      <Tab tabLabel="Build">
+      <Tab tabLabel={props.t("getstarted.tab3.label")}>
         <TwoColIconMarkup icon={IconCode}>
 
           <StyledTabSection gridColumn={1}>
@@ -224,7 +225,7 @@ const SecondPage = () => (
         </TwoColIconMarkup>
 
       </Tab>
-      <Tab tabLabel="Activate">
+      <Tab tabLabel={props.t("getstarted.tab4.label")}>
         <TwoColIconMarkup icon={IconArrow}>
           <StyledTwoColMarkupTitle text="How To Get Started" />
           <List listIndex={1}>
@@ -262,4 +263,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default withNamespaces()(GetStarted);

@@ -41,7 +41,6 @@ const StyledBody = styled.div`
     margin: 0 auto;
     padding: 0 20px 50px;
     color: ${p => p.theme.paragraph.color};
-    z-index: 99;
     position: relative;
   }
 `;

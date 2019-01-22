@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import iconNewsletter from '../../images/icons/icon-newsletter.svg';
-
+import addToMailchimp from 'gatsby-plugin-mailchimp';
+import ReactHtmlParser from 'react-html-parser';
 
 const statusUpdate = (status) => {
   let color = 'white';
@@ -98,55 +99,16 @@ class MailChimpForm extends Component {
     this.emailRef = React.createRef();
   }
   formSubmit(e){
-    const self = this;
     const emailValue = this.emailRef.current.value;
     
-    // mailchimp api sucks
-    // const formData = new FormData(this.formRef);
-    // formData.append('EMAIL', this.emailRef.current.value);
-    // let object =  {};
-    // formData.forEach(function(value, key){
-    //     object[key] = value;
-    // });
-
-    const url = `https://tezos.us6.list-manage.com/subscribe/post?u=80b9a27c332a234b4cac5c13b&id=d8f4b4112e&c=jQuery190005915435378856371_1547518496493&EMAIL=${emailValue}&b_80b9a27c332a234b4cac5c13b_d8f4b4112e=&subscribe=Submit&_=1547517311464`;
-
-    fetch(url,
-      {
-        mode: 'no-cors'
-      }
-    ).then(function(response) {
-      const ryGetJson = async (response) => {
-        console.log(response);
-        return new Promise((resolve) => {
-          if (response) {
-            response.json().then(json => resolve(json)).catch(() => resolve(null))
-          } else {
-            resolve(null)
-          }
-        })
-      }
-      return ryGetJson;
-    }).then(function(myJson) {
-      const obj = JSON.stringify(myJson);
-      if (typeof obj === 'object' && obj.status === 'success'){
-        self.setState(
-          {
-            status: 'success',
-            message: 'Thank you for subscribing!'
-          }
-        )
-      } else {
-        self.setState(
-          {
-            status: 'error',
-            message: 'sorry that email address is already submitted'
-          }
-        )
-      }
-      console.log(JSON.stringify(myJson));
+    addToMailchimp(emailValue)
+    .then(data => {
+      console.log(data)
+      this.setState({message: data.msg, status: data.result});
     })
-    .catch(error => console.error('Error:', error));
+    .catch((err) => {
+      console.error(err)
+    })
     
     e.preventDefault();
   }
@@ -160,7 +122,7 @@ class MailChimpForm extends Component {
           </StyledLabel>
           <StyledEmailWrap status={this.state.status}>
             <StyledEmailField type="email" placeholder="Email" ref={this.emailRef}/>
-            <p>{this.state.message}</p>
+            <p>{ReactHtmlParser(this.state.message)}</p>
           </StyledEmailWrap>
           
           <StyledSubmit type="submit"/>
