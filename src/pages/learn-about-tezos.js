@@ -145,10 +145,10 @@ const IndexPage = (props) => (
                   <a href="https://tezos.gitlab.io/master/" target="_blank" rel="noopener noreferrer">{props.t('learn.button1')}</a>
                 </li>
                 <li>
-                  <a href="https://gitlab.com/tezos/tezos" target="_blank" rel="noopener noreferrer">{props.t('learn.button2')}</a>
+                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank" rel="noopener noreferrer">{props.t('learn.button3')}</a>
                 </li>
                 <li>
-                  <a href="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" target="_blank" rel="noopener noreferrer">{props.t('learn.button3')}</a>
+                  <a href="https://gitlab.com/tezos/tezos" target="_blank" rel="noopener noreferrer">{props.t('learn.button2')}</a>
                 </li>
                 <li>
                   <a href="https://groups.google.com/forum/#!forum/tezos-developer-community" target="_blank" rel="noopener noreferrer">{props.t('learn.button4')}</a>

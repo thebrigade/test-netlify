@@ -112,9 +112,9 @@
     },
     "tab3":{
       "label":"Build",
-      "title1":"Help secure the ledger",
+      "title1":"Get started with the Tezos network",
       "title2":"Start writing smart contracts with Michelson",
-      "title3":"Help secure the ledger",
+      "title3":"Tezos is built on OCaml",
       "content1":"<p>Take a look at these developer resources for specifics on how Tezos operates and stay up to date</p>",
       "content2":"<p>Tezos smart contracts are written in Michelson, a domain-specific language which is stack based and strongly typed. Michelson was designed to facilitate formal verification, allowing users to prove properties of their contracts.</p>",
       "content3":"<p>Tezos is implemented in OCaml, a powerful functional programming language offering speed and a rich set of libraries. OCaml is used by companies such as Bloomberg, Facebook, Jane Street Capital, and Docker in environments where safety is critical. Ocaml’s unambiguous syntax and semantic make Tezos a good candidate for formal proofs of correctness.</p>",

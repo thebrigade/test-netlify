@@ -23,7 +23,7 @@ import * as IconKukai from '../images/icons/icn-kukai.png';
 import * as IconTezbox from '../images/icons/icn-tezbox.png';
 import * as IconObsidian from '../images/icons/icn-obsidian.png';
 import * as IconTrezor from '../images/icons/icn-trezor.png';
-import * as IconCLI from '../images/icons/icn-tezbox.png';
+import * as IconCLI from '../images/icons/icn-cli.svg';
 import * as IconStore from '../images/icons/hdr-store.svg';
 import * as IconBaking from '../images/icons/icon-start_baking.svg';
 import * as IconSlack from '../images/icons/icn-slack.svg';
@@ -33,6 +33,7 @@ import * as IconArrow from '../images/icons/icon-arrow-right.svg';
 import * as IconCheck from '../images/icons/hdr-check.svg';
 import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
 import * as IconTezos from '../images/icons/icn-tezos-circle.png';
+import * as IconLedger from '../images/icons/icn-ledger.png';
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
@@ -103,7 +104,7 @@ const GetStarted = (props) => (
               platforms={['Obsidian Systems']}
               title="Ledger"
               to="https://www.ledger.com/"
-              icon={IconObsidian}
+              icon={IconLedger}
               external
             />
             <IconCta
@@ -122,7 +123,7 @@ const GetStarted = (props) => (
             />
           </StyledTabSection>
           <Disclaimer>
-            {props.t('getstarted.tab1.disclaimer')}
+            {ReactHtmlParser(props.t('getstarted.tab1.disclaimer'))}
           </Disclaimer>
         </TwoColIconMarkup>
         
@@ -146,7 +147,7 @@ const GetStarted = (props) => (
               <Title text={props.t("getstarted.tab2.title4")} />
               <Content>{props.t("getstarted.tab2.content4")}</Content>
               <br />
-              <StyledSlackButton text={props.t("getstarted.tab2.slacklabel")} iconImage={IconSlack} buttonBig/>
+              <StyledSlackButton text={props.t("getstarted.tab2.slacklabel")} iconImage={IconSlack} buttonBig smallTxt to="mailto:tezos@obsidian.systems" external/>
             </article>
           </StyledTabSection>
         </TwoColIconMarkup>
@@ -171,9 +172,9 @@ const GetStarted = (props) => (
             <article>
               <Title text={props.t("getstarted.tab2.title6")} />
               <IconCta
-                platforms={['Obsidian Systems']}
-                title="Ledger"
-                to="https://www.ledger.com/"
+                platforms={['Ledger']}
+                title="Obsidian Systems"
+                to="https://github.com/obsidiansystems/ledger-app-tezos"
                 icon={IconObsidian}
               />
             </article>

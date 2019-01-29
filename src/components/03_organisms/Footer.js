@@ -9,6 +9,7 @@ import { withNamespaces } from 'react-i18next';
 import * as TwitterLogo from '../../images/icons/social-icon-twitter.svg';
 import * as GitlabLogo from '../../images/icons/social-icon-gitlab.svg';
 import * as RiotLogo from '../../images/icons/social-icon-riot.svg';
+import * as IconScales from '../../images/icons/icon-scale.svg';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -70,7 +71,7 @@ const Footer = (props) => (
         </SociaGroup>
         <StyledRightCol>
           <p>{props.t("nav.bottom.copyright", {date: copyDate})}</p>
-          <LanguageSwitcher/>
+          {/* <LanguageSwitcher/> */}
         </StyledRightCol>
       </div>
     </StyledFooter>

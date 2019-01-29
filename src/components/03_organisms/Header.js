@@ -43,10 +43,11 @@ const Header = (props) => (
         <StyledButton text={props.t('nav.top.link2')} to="/bug-bounty"/>
         <StyledButton
           text={props.t('nav.top.link3')}
-          to="/get-started"
+          to="https://medium.com/tezos  "
           iconImage={mediumImage} 
           iconDirectionReverse
           iconSmall
+          external
         />
         <StyledButton text={props.t('nav.top.link4')} to="/get-started" buttonBig/>
       </Navigation>
