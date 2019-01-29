@@ -23,7 +23,7 @@ import * as IconKukai from '../images/icons/icn-kukai.png';
 import * as IconTezbox from '../images/icons/icn-tezbox.png';
 import * as IconObsidian from '../images/icons/icn-obsidian.png';
 import * as IconTrezor from '../images/icons/icn-trezor.png';
-import * as IconCLI from '../images/icons/icn-tezbox.png';
+import * as IconCLI from '../images/icons/icn-cli.svg';
 import * as IconStore from '../images/icons/hdr-store.svg';
 import * as IconBaking from '../images/icons/icon-start_baking.svg';
 import * as IconSlack from '../images/icons/icn-slack.svg';
@@ -33,6 +33,7 @@ import * as IconArrow from '../images/icons/icon-arrow-right.svg';
 import * as IconCheck from '../images/icons/hdr-check.svg';
 import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
 import * as IconTezos from '../images/icons/icn-tezos-circle.png';
+import * as IconLedger from '../images/icons/icn-ledger.png';
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
@@ -103,7 +104,7 @@ const GetStarted = (props) => (
               platforms={['Obsidian Systems']}
               title="Ledger"
               to="https://www.ledger.com/"
-              icon={IconObsidian}
+              icon={IconLedger}
               external
             />
             <IconCta
@@ -122,58 +123,58 @@ const GetStarted = (props) => (
             />
           </StyledTabSection>
           <Disclaimer>
-            {props.t('getstarted.tab1.disclaimer')}
+            {ReactHtmlParser(props.t('getstarted.tab1.disclaimer'))}
           </Disclaimer>
         </TwoColIconMarkup>
         
       </Tab>
       <Tab tabLabel={props.t("getstarted.tab2.label")}>
         <TwoColIconMarkup icon={IconBaking}>
-          <StyledTwoColMarkupTitle text="Help secure the ledger" />
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab2.title1")} />
           <Content>
-            <p>“Baking” is the act of signing and publishing blocks to the Tezos blockchain. Bakers are a crucial component of the Proof-of-Stake consensus mechanism by ensuring that all transactions in a block are correct, that the order of transactions is agreed upon, and that no double-spending has occurred.</p>
+            {ReactHtmlParser(props.t("getstarted.tab2.content1"))}
           </Content>
           <StyledTabSection>
             <article>
-              <Title text="Validate Transactions" />
-              <Content>Bakers validate all transactions and add them to the blockchain. If a baker behaves dishonestly, the protocol has a built-in mechanism that can cause them to lose their security deposit.</Content>
+              <Title text={props.t("getstarted.tab2.title2")} />
+              <Content>{props.t("getstarted.tab2.content2")}</Content>
             </article>
             <article>
-              <Title text="Earn Rewards" />
-              <Content>Bakers are rewarded with additional tez for securing the network.</Content>
+              <Title text={props.t("getstarted.tab2.title3")} />
+              <Content>{props.t("getstarted.tab2.content3")}</Content>
             </article>
             <article>
-              <Title text="Become a Baker" />
-              <Content>Request to join the baker chat room if you are building a baking operation. A community member runs the chat room and acts on these requests.</Content>
+              <Title text={props.t("getstarted.tab2.title4")} />
+              <Content>{props.t("getstarted.tab2.content4")}</Content>
               <br />
-              <StyledSlackButton text="<span>Join the Obsidian<br>Baking Slack</span>" iconImage={IconSlack} buttonBig/>
+              <StyledSlackButton text={props.t("getstarted.tab2.slacklabel")} iconImage={IconSlack} buttonBig smallTxt to="mailto:tezos@obsidian.systems" external/>
             </article>
           </StyledTabSection>
         </TwoColIconMarkup>
 
         <TwoColIconMarkup icon={IconCheck}>
 
-          <StyledTwoColMarkupTitle text="Resources to get started with baking:" />
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab2.title5")} />
           
           <StyledTabSection gridColumn={2}>
             <article>
               <Content>
                 <ul>
                   <li>
-                    <a href="http://tezos.gitlab.io/mainnet/whitedoc/proof_of_stake.html" target="_blank" rel="noopener noreferrer">Proof-of-stake documentation for Tezos</a>
+                    <a href="http://tezos.gitlab.io/mainnet/whitedoc/proof_of_stake.html" target="_blank" rel="noopener noreferrer">{props.t("getstarted.tab2.label2")}</a>
                   </li>
                   <li>
-                    <a href="https://medium.com/tezos/its-a-baker-s-life-for-me-c214971201e1" target="_blank" rel="noopener noreferrer">"It's a Baker's Life for me: being a Tezos validator"</a>
+                    <a href="https://medium.com/tezos/its-a-baker-s-life-for-me-c214971201e1" target="_blank" rel="noopener noreferrer">{props.t("getstarted.tab2.label3")}</a>
                   </li>
                 </ul>
               </Content>
             </article>
             <article>
-              <Title text="Hardware Wallets for Baking" />
+              <Title text={props.t("getstarted.tab2.title6")} />
               <IconCta
-                platforms={['Obsidian Systems']}
-                title="Ledger"
-                to="https://www.ledger.com/"
+                platforms={['Ledger']}
+                title="Obsidian Systems"
+                to="https://github.com/obsidiansystems/ledger-app-tezos"
                 icon={IconObsidian}
               />
             </article>
@@ -186,13 +187,13 @@ const GetStarted = (props) => (
 
           <StyledTabSection gridColumn={1}>
             <article>
-              <StyledTwoColMarkupTitle text="Help secure the ledger" />
-              <Content><p>Take a look at these developer resources for specifics on how Tezos operates and stay up to date</p></Content>
+              <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title1")} />
+              <Content>{ReactHtmlParser(props.t("getstarted.tab3.content1"))}</Content>
               <ButtonGroup>
-                <StyledSmallIconbutton text="<span>Documentation</span>" to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
-                <StyledSmallIconbutton text="<span>Tezos Gitlab</span>" to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
-                <Button text="Chat Room (Matrix)" to="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" buttonBig smallTxt inverse external/>
-                <Button text="Mailing List" to="https://groups.google.com/forum/#!forum/tezos-developer-community" buttonBig smallTxt inverse external/>
+                <StyledSmallIconbutton text={props.t("getstarted.tab3.buttonlabel1")} to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
+                <StyledSmallIconbutton text={props.t("getstarted.tab3.buttonlabel2")} to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel3")} to="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" buttonBig smallTxt inverse external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel4")} to="https://groups.google.com/forum/#!forum/tezos-developer-community" buttonBig smallTxt inverse external/>
               </ButtonGroup>
               
             </article>
@@ -200,10 +201,10 @@ const GetStarted = (props) => (
           
           <StyledTabSection gridColumn={1}>
             <article>
-              <StyledTwoColMarkupTitle text="Start writing smart contracts with Michelson" />
-              <Content><p>Tezos smart contracts are written in Michelson, a domain-specific language which is stack based and strongly typed. Michelson was designed to facilitate formal verification, allowing users to prove properties of their contracts.</p></Content>
+              <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title2")} />
+              <Content>{ReactHtmlParser(props.t("getstarted.tab3.content2"))}</Content>
               <ButtonGroup>
-                <Button text="Michelson Documentation" to="http://tezos.gitlab.io/mainnet/whitedoc/michelson.html" buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel5")} to="http://tezos.gitlab.io/mainnet/whitedoc/michelson.html" buttonBig smallTxt external/>
               </ButtonGroup>
             </article>
           </StyledTabSection>
@@ -213,12 +214,12 @@ const GetStarted = (props) => (
         <TwoColIconMarkup icon={IconFolder}>
           <StyledTabSection gridColumn={1}>
             <article>
-              <StyledTwoColMarkupTitle text="Help secure the ledger" />
-              <Content><p>Tezos is implemented in OCaml, a powerful functional programming language offering speed and a rich set of libraries. OCaml is used by companies such as Bloomberg, Facebook, Jane Street Capital, and Docker in environments where safety is critical. Ocaml’s unambiguous syntax and semantic make Tezos a good candidate for formal proofs of correctness.</p></Content>
+              <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title3")} />
+              <Content>{ReactHtmlParser(props.t("getstarted.tab3.content3"))}</Content>
               <ButtonGroup>
-                <Button text="What is OCaml?" to="https://ocaml.org/learn/description.html" buttonBig smallTxt external/>
-                <Button text="Try OCaml" to="https://try.ocamlpro.com/" buttonBig smallTxt inverse external/>
-                <Button text="Real-world OCaml" to="https://realworldocaml.org/" buttonBig smallTxt inverse external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel6")} to="https://ocaml.org/learn/description.html" buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel7")} to="https://try.ocamlpro.com/" buttonBig smallTxt inverse external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel8")} to="https://realworldocaml.org/" buttonBig smallTxt inverse external/>
               </ButtonGroup>
             </article>
           </StyledTabSection>
@@ -227,34 +228,33 @@ const GetStarted = (props) => (
       </Tab>
       <Tab tabLabel={props.t("getstarted.tab4.label")}>
         <TwoColIconMarkup icon={IconArrow}>
-          <StyledTwoColMarkupTitle text="How To Get Started" />
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab4.title1")} />
           <List listIndex={1}>
-            <Title text="Check Your Contribution"/>
+            <Title text={props.t("getstarted.tab4.title2")}/>
             <Content>
-              <p>Click on the "Check Your Contribution" button below to check the recommended allocation of a given public key hash. Contributors may find their public key hashes on the PDF documents they created during the Foundation's fundraiser.</p>
+              {ReactHtmlParser(props.t("getstarted.tab4.content1"))}
             </Content>
             <ButtonGroup>
-              <Button text="Check Your Contribution" to="https://check.tezos.com/" external buttonBig smallTxt external/>
+              <Button text={props.t("getstarted.tab4.buttonlabel1")} to="https://check.tezos.com/" external buttonBig smallTxt external/>
             </ButtonGroup>
           </List>
           <List listIndex={2}>
-            <Title text="Obtain Your Activation Code"/>
+            <Title text={props.t("getstarted.tab4.title3")}/>
             <Content>
-              <p>Activation codes are required to access the recommended allocations of the corresponding public key hashes. In order to obtain these codes, contributors must complete the Foundation’s Know Your Customer / Anti-Money Laundering (“KYC/AML”) process. Contributors who have not completed this process may do so now.</p>
+              {ReactHtmlParser(props.t("getstarted.tab4.content2"))}
             </Content>
             <ButtonGroup>
-              <Button text="Begin KYC/AML" to="https://verification.tezos.com/" external buttonBig smallTxt external/>
-              <Button text="KYC/AML FAQ" to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse external/>
+              <Button text={props.t("getstarted.tab4.buttonlabel2")} to="https://verification.tezos.com/" external buttonBig smallTxt external/>
+              <Button text={props.t("getstarted.tab4.buttonlabel3")} to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse external/>
             </ButtonGroup>
           </List>
           <List listIndex={3}>
-            <Title text="Activate Your Recommended Allocation"/>
+            <Title text={props.t("getstarted.tab4.title4")}/>
             <Content>
-              <p>Recommended allocations from the fundraiser must be activated before they can be accessed. A contributor may activate the recommended allocation of a given public key hash by using the Activation Tool. This tool may also reveal the blinded key of the given public key hash. Blinded keys, not public key hashes, are the keys that appear in the genesis block proposed by the Foundation, which may be found <a href="https://tezos.foundation/wp-content/uploads/2018/09/5223213-genesis.txt" target="_blank" rel="noopener noreferrer">here</a></p>
-              <p>A balance for a public key hash that was recommended an allocation will not appear on a Tezos block explorer until it has been activated. After a contributor has activated its recommended allocation, it may view the “Store and Use” page for information regarding storing and using its Tezos tokens (“tez”).</p>
+              {ReactHtmlParser(props.t("getstarted.tab4.content3"))}
             </Content>
             <ButtonGroup>
-              <Button text="Activate" to="https://activate.tezos.com/" external buttonBig smallTxt external/>
+              <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt external/>
             </ButtonGroup>
           </List>
         </TwoColIconMarkup>

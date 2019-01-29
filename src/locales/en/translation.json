@@ -28,6 +28,11 @@
     "cta3" : {
       "title" : "Proof-of-Stake",
       "copy" : "Tezos’ unique proof-of-stake consensus algorithm gives every stakeholder the opportunity to participate in the validation of transactions on the network and be rewarded by the protocol for doing so."
+    },
+    "mailchimp":{
+      "label":"Join our newsletter",
+      "placeholder":"Email",
+      "buttonlabel1":"Submit"
     }
   },
   "learn" : {
@@ -90,13 +95,51 @@
       "disclaimer":"<p>*These links for wallets are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval by the Tezos Foundation of any of the products or services provided by those sites. The Tezos Foundation bears no responsibility for the accuracy, legality or content of the external sites or for that of subsequent links, or for the performance or lack thereof of any wallets provided by those sites. Contact the external site for answers to questions regarding its content.</p>"
     },
     "tab2":{
-      "label":"Bake"
+      "label":"Bake",
+      "label2":"Proof-of-stake documentation for Tezos",
+      "label3":"\"It's a Baker's Life for me: being a Tezos validator\"",
+      "slacklabel":"<span>Join the Obsidian<br>Baking Slack</span>",
+      "title1":"Help secure the ledger",
+      "title2":"Validate Transactions",
+      "title3":"Earn Rewards",
+      "title4":"Become a Baker",
+      "title5":"Resources to get started with baking:",
+      "title6":"Hardware Wallets for Baking",
+      "content1":"<p>“Baking” is the act of signing and publishing blocks to the Tezos blockchain. Bakers are a crucial component of the Proof-of-Stake consensus mechanism by ensuring that all transactions in a block are correct, that the order of transactions is agreed upon, and that no double-spending has occurred.</p>",
+      "content2":"Bakers validate all transactions and add them to the blockchain. If a baker behaves dishonestly, the protocol has a built-in mechanism that can cause them to lose their security deposit.",
+      "content3":"Bakers are rewarded with additional tez for securing the network.",
+      "content4":"Request to join the baker chat room if you are building a baking operation. A community member runs the chat room and acts on these requests."
     },
     "tab3":{
-      "label":"Build"
+      "label":"Build",
+      "title1":"Get started with the Tezos network",
+      "title2":"Start writing smart contracts with Michelson",
+      "title3":"Tezos is built on OCaml",
+      "content1":"<p>Take a look at these developer resources for specifics on how Tezos operates and stay up to date</p>",
+      "content2":"<p>Tezos smart contracts are written in Michelson, a domain-specific language which is stack based and strongly typed. Michelson was designed to facilitate formal verification, allowing users to prove properties of their contracts.</p>",
+      "content3":"<p>Tezos is implemented in OCaml, a powerful functional programming language offering speed and a rich set of libraries. OCaml is used by companies such as Bloomberg, Facebook, Jane Street Capital, and Docker in environments where safety is critical. Ocaml’s unambiguous syntax and semantic make Tezos a good candidate for formal proofs of correctness.</p>",
+      "buttonlabel1":"<span>Documentation</span>",
+      "buttonlabel2":"<span>Tezos Gitlab</span>",
+      "buttonlabel3":"Chat Room (Matrix)",
+      "buttonlabel4":"Mailing List",
+      "buttonlabel5":"Michelson Documentation",
+      "buttonlabel6":"What is OCaml?",
+      "buttonlabel7":"Try OCaml",
+      "buttonlabel8":"Real-world OCaml"
     },
     "tab4":{
-      "label":"Activate"
+      "label":"Activate",
+      "title1":"How To Get Started",
+      "title2":"Check Your Contribution",
+      "title3":"Obtain Your Activation Code",
+      "title4":"Activate Your Recommended Allocation",
+      "content1":"<p>Click on the \"Check Your Contribution\" button below to check the recommended allocation of a given public key hash. Contributors may find their public key hashes on the PDF documents they created during the Foundation's fundraiser.</p>",
+      "content2":"<p>Activation codes are required to access the recommended allocations of the corresponding public key hashes. In order to obtain these codes, contributors must complete the Foundation’s Know Your Customer / Anti-Money Laundering (“KYC/AML”) process. Contributors who have not completed this process may do so now.</p>",
+      "content3":"<p>Recommended allocations from the fundraiser must be activated before they can be accessed. A contributor may activate the recommended allocation of a given public key hash by using the Activation Tool. This tool may also reveal the blinded key of the given public key hash. Blinded keys, not public key hashes, are the keys that appear in the genesis block proposed by the Foundation, which may be found <a href='https://tezos.foundation/wp-content/uploads/2018/09/5223213-genesis.txt' target='_blank' rel='noopener noreferrer'>here</a></p> <p>A balance for a public key hash that was recommended an allocation will not appear on a Tezos block explorer until it has been activated. After a contributor has activated its recommended allocation, it may view the “Store and Use” page for information regarding storing and using its Tezos tokens (“tez”).</p>",
+      "buttonlabel1":"Check Your Contribution",
+      "buttonlabel2":"Begin KYC/AML",
+      "buttonlabel3":"KYC/AML FAQ",
+      "buttonlabel4":"Activate"
     }
   }
 }

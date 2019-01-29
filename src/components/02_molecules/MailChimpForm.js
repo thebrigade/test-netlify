@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import iconNewsletter from '../../images/icons/icon-newsletter.svg';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import ReactHtmlParser from 'react-html-parser';
+import PropTypes from 'prop-types';
 
 const statusUpdate = (status) => {
   let color = 'white';
@@ -92,6 +93,11 @@ const StyledLabel = styled.label`
 `;
 
 class MailChimpForm extends Component {
+  static props = {
+    label: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    buttonLabel: PropTypes.string.isRequired
+  }
   constructor(props){
     super(props);
     this.state = { status: 'ready', message: 'nothing to see here' }
@@ -113,19 +119,20 @@ class MailChimpForm extends Component {
     e.preventDefault();
   }
   render() {
+    const { label, placeholder, buttonLabel } = this.props;
     return (
       <form onSubmit={(e) => this.formSubmit(e)} ref={this.formRef}>
         <StyledFormContainer>
           <StyledLabel>
             <img className="icon" src={iconNewsletter} alt="Email" />
-            <StyledLabelTitle>Join our newsletter</StyledLabelTitle>
+            <StyledLabelTitle>{label}</StyledLabelTitle>
           </StyledLabel>
           <StyledEmailWrap status={this.state.status}>
-            <StyledEmailField type="email" placeholder="Email" ref={this.emailRef}/>
+            <StyledEmailField type="email" placeholder={placeholder} ref={this.emailRef}/>
             <p>{ReactHtmlParser(this.state.message)}</p>
           </StyledEmailWrap>
           
-          <StyledSubmit type="submit"/>
+          <StyledSubmit type="submit" value={buttonLabel}/>
         </StyledFormContainer>
       </form>
     )

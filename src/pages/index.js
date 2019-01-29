@@ -50,7 +50,11 @@ const IndexPage = (props) => (
         copy={props.t("index.cta3.copy")}
       />
     </Section>
-    <MailChimpForm />
+    <MailChimpForm
+      label={props.t("index.mailchimp.label")}
+      placeholder={props.t("index.mailchimp.placeholder")}
+      buttonLabel={props.t("index.mailchimp.buttonlabel1")}
+    />
   </LayoutHome>
 )
 
