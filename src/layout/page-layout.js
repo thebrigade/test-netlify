@@ -8,7 +8,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme, {COLOR_FOOTER, COLOR_PRIMARY_LINK} from '../theme';
 import * as bodyImage from '../images/hero-bg.png';
 import * as favicon from '../images/favicon.png';
-
+import ModalContextProvider from '../context/modal-context';
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -55,29 +55,31 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <Fragment>
-          <GlobalStyle />
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
+        <ModalContextProvider>
+          <Fragment>
+            <GlobalStyle />
+            <Helmet
+              title={data.site.siteMetadata.title}
+              meta={[
+                { name: 'description', content: 'Sample' },
+                { name: 'keywords', content: 'sample, something' },
+              ]}
+            >
+              
+              <html lang="en" />
+              <link rel="shortcut icon" href={favicon} />
+              <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500" rel="stylesheet"/>
+            </Helmet>
             
-            <html lang="en" />
-            <link rel="shortcut icon" href={favicon} />
-            <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500" rel="stylesheet"/>
-          </Helmet>
-          
-          <StyledBody>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <div className="container">
-              {children}
-            </div>
-          </StyledBody>
-          <Footer />
-        </Fragment>
+            <StyledBody>
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <div className="container">
+                {children}
+              </div>
+            </StyledBody>
+            <Footer />
+          </Fragment>
+        </ModalContextProvider>
       </ThemeProvider>
     )}
   />

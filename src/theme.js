@@ -1,3 +1,4 @@
+export const COLOR_SNOW = '#fff';
 // navigation items and buttons
 export const COLOR_PRIMARY_LINK = '#2c7df7';
 export const COLOR_PRIMARY_LINK_INVERSE = '#fff';
