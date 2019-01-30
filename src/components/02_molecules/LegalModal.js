@@ -103,7 +103,7 @@ class LegalModal extends Component {
                 <StyledCloseButton onClick={e => { openModal({open: false}); e.preventDefault()}}>close</StyledCloseButton>
                 {ReactHtmlParser(legalCopy)}
                 <div className="button-wrap">
-                  <Button to={state.link} text={buttonLabel} external buttonBig smallTxt/>
+                  <Button to={state.link} text={buttonLabel} external buttonBig smallTxt callBack={() => openModal({open: false})}/>
                 </div>
               </div>
             </StyledModal> 

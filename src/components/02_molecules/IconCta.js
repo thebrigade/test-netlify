@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import theme from '../../theme';
-
+import {ModalContext} from '../../context/modal-context';
 
 const StyledIconImage = styled.img`
   margin-right: 20px;
@@ -50,15 +50,28 @@ const commaSeparatedPlatforms = (data) => {
 
 const IconCta = (props) => {
   return (
-    <ThemeProvider theme={theme}>
-      <StyledIconCTA href={props.to} className={props.className}>
-        <StyledIconImage src={props.icon} alt="label" />
-        <div className="meta">
-          <h5>{props.title}</h5>
-          {props.platforms ? (<p>({commaSeparatedPlatforms(props.platforms)})</p>) : null}
-        </div>
-      </StyledIconCTA>
-    </ThemeProvider>
+    <ModalContext.Consumer>
+      {({openModal}) => {
+        return (
+          <ThemeProvider theme={theme}>
+            <StyledIconCTA
+              href={props.to}
+              className={props.className}
+              onClick={(e) => {
+                openModal({open: true, link: props.to})
+                e.preventDefault();
+              }}
+            >
+              <StyledIconImage src={props.icon} alt="label" />
+              <div className="meta">
+                <h5>{props.title}</h5>
+                {props.platforms ? (<p>({commaSeparatedPlatforms(props.platforms)})</p>) : null}
+              </div>
+            </StyledIconCTA>
+          </ThemeProvider>
+        )
+      }}
+    </ModalContext.Consumer>
   )
 }
 

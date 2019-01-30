@@ -11,7 +11,7 @@ class ModalContextProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true,
+      open: false,
       link: 'http://tezos.com'
     }
     this.openModal = modalState => {
