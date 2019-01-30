@@ -59,7 +59,8 @@ class Button extends Component {
     inline: PropTypes.bool,
     iconSmall: PropTypes.bool,
     smallTxt: PropTypes.bool,
-    inverse: PropTypes.bool
+    inverse: PropTypes.bool,
+    callBack: PropTypes.func
   }
 
   static defaultProps = {
@@ -68,7 +69,8 @@ class Button extends Component {
     iconDirectionReverse: false,
     iconSmall: false,
     smallTxt: false,
-    inverse: false
+    inverse: false,
+    callBack: null
   }
 
   createButton() {
@@ -83,7 +85,8 @@ class Button extends Component {
       inline,
       className,
       smallTxt,
-      inverse
+      inverse,
+      callBack
     } = this.props;
 
     let props = {
@@ -100,10 +103,18 @@ class Button extends Component {
     if(external) {
       props.href = to;
       props.target = "_blank"
+      if (typeof callBack === 'function') {
+        props.onClick = (e) => {
+          callBack();
+        }
+      }
     } else {
       props.href = '#';
       props.onClick = (e) => {
         navigate(to)
+        if (typeof callBack === 'function') {
+          callBack();
+        }
         e.preventDefault();
       }
     }
