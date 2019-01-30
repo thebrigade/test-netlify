@@ -18,6 +18,7 @@ import '../components/i18n';
 import { withNamespaces } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import LegalModal from '../components/02_molecules/LegalModal';
+import {TabContext} from '../context/tab-context';
 
 import * as IconGalleon from '../images/icons/icn-galleon-wallet.png';
 import * as IconKukai from '../images/icons/icn-kukai.png';
@@ -67,7 +68,6 @@ const StyledSmallIconbutton = styled(Button)`
 `;
 
 const GetStarted = (props) => (
-  
     <Layout>
       <LegalModal
         legalCopy={props.t('getstarted.tab1.disclaimer')}
@@ -134,7 +134,6 @@ const GetStarted = (props) => (
               {ReactHtmlParser(props.t('getstarted.tab1.disclaimer'))}
             </Disclaimer>
           </TwoColIconMarkup>
-          
         </Tab>
         <Tab tabLabel={props.t("getstarted.tab2.label")}>
           <TwoColIconMarkup icon={IconBaking}>
@@ -252,8 +251,8 @@ const GetStarted = (props) => (
                 {ReactHtmlParser(props.t("getstarted.tab4.content2"))}
               </Content>
               <ButtonGroup>
-                <Button text={props.t("getstarted.tab4.buttonlabel2")} to="https://verification.tezos.com/" external buttonBig smallTxt external/>
-                <Button text={props.t("getstarted.tab4.buttonlabel3")} to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse external/>
+                <Button text={props.t("getstarted.tab4.buttonlabel2")} to="https://verification.tezos.com/" external buttonBig smallTxt/>
+                <Button text={props.t("getstarted.tab4.buttonlabel3")} to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse/>
               </ButtonGroup>
             </List>
             <List listIndex={3}>
@@ -262,7 +261,12 @@ const GetStarted = (props) => (
                 {ReactHtmlParser(props.t("getstarted.tab4.content3"))}
               </Content>
               <ButtonGroup>
-                <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt/>
+                <TabContext.Consumer>
+                  {({setTab}) => (
+                    <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={() => setTab({currentTab: 0})}/>
+                  )}
+                </TabContext.Consumer>
               </ButtonGroup>
             </List>
           </TwoColIconMarkup>
