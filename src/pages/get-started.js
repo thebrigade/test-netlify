@@ -70,8 +70,8 @@ const GetStarted = (props) => (
   
     <Layout>
       <LegalModal
-        legalCopy="hello world"
-        buttonLabel="to next website"
+        legalCopy={props.t('getstarted.tab1.disclaimer')}
+        buttonLabel="Continue To Application"
       />
       <Hero
         icon={HeroIcon}
