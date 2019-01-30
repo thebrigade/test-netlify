@@ -51,7 +51,7 @@ const StyledButton = styled.a`
 class Button extends Component {
   static props = {
     text: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
+    to: PropTypes.string,
     external: PropTypes.bool,
     buttonBig: PropTypes.bool,
     iconDirectionReverse: PropTypes.bool,
@@ -109,16 +109,27 @@ class Button extends Component {
         }
       }
     } else {
-      props.href = '#';
-      props.onClick = (e) => {
-        navigate(to)
-        if (typeof callBack === 'function') {
-          callBack();
+      if (typeof to === 'string') {
+        props.href = "#";
+        props.onClick = (e) => {
+          navigate(to)
+          if (typeof callBack === 'function') {
+            callBack();
+          }
+          e.preventDefault();
         }
-        e.preventDefault();
+      } else {
+        props.href = "#";
+        props.onClick = (e) => {
+          if (typeof callBack === 'function') {
+            callBack();
+          }
+          e.preventDefault();
+        };
       }
+      
     }
-
+    
     if(iconDirectionReverse) {
       props.iconDirectionReverse = true
     }
