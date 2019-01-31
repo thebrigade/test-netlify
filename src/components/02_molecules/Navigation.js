@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import theme from '../../theme';
 import Hamburger from '../01_atoms/Hamburger';
+import {NavigationContext} from '../../context/navigation-context';
 
 const StyledNavHamburger = styled(Hamburger)``
-
 const StyledNavGroup = styled.div`
   display: flex;
   align-items: center;
@@ -72,10 +72,7 @@ const StyledNav = styled.nav`
 `;
 
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { mobileNavOpen: false }
-  }
+  static contextType = NavigationContext;
   createLinks() {
     const { children } = this.props;
     return React.Children.map(children, (el) => {
@@ -86,21 +83,17 @@ class Navigation extends Component {
       )
     })
   }
-  hamburgerToggle(e) {
-    console.log(e.state.open);
-    this.setState({mobileNavOpen: e.state.open})
-  }
   render() {
-    const {mobileNavOpen} = this.state;
+    const { state } = this.context
     return (
       <ThemeProvider theme={theme}>
         <StyledNav>
-          <StyledNavGroup showNav={mobileNavOpen}>
+          <StyledNavGroup showNav={state.mobileNavOpen}>
             <ul>
               {this.createLinks()}
             </ul>
           </StyledNavGroup>
-          <StyledNavHamburger onToggle={(e) => this.hamburgerToggle(e)}/>
+          <StyledNavHamburger />
         </StyledNav>
       </ThemeProvider>
     )

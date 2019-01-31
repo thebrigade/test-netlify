@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled  from 'styled-components';
 import { COLOR_PRIMARY_LINK } from '../../theme';
 import PropTypes from 'prop-types';
+import {NavigationContext} from '../../context/navigation-context';
 
 const StyledHamburger = styled.button`
   position: relative;
@@ -67,26 +68,18 @@ class Hamburger extends Component {
     className: PropTypes.string,
     onToggle: PropTypes.func
   }
-  constructor(props) {
-    super(props);
-    this.state = { open: false }
-  }
-  toggleMenu() {
-    const { onToggle } = this.props
+  static contextType = NavigationContext;
 
-    this.setState({open: this.state.open ? false : true}, () => onToggle(this))
-    
-  }
   render() {
-    const { open } = this.state;
     const { className } = this.props;
+    const { state, toggleMobileNav } = this.context;
     return (
       <StyledHamburger
-        onClick={() => this.toggleMenu()}
-        active={open}
+        onClick={() => toggleMobileNav({mobileNavOpen: state.mobileNavOpen ? false : true})}
+        active={state.mobileNavOpen}
         className={className}
       >
-      <span></span>
+        <span></span>
       </StyledHamburger>
     )
   }
