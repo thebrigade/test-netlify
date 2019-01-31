@@ -267,6 +267,7 @@ const GetStarted = (props) => (
                   {({setTab}) => (
                     <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={
                       () => {
+                        // set current tab the first one and scroll it into view
                         setTab({currentTab: 0});
                         document.querySelector('.section-tabs').scrollIntoView({
                           block: 'start',
