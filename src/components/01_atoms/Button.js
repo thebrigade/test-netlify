@@ -101,6 +101,7 @@ class Button extends Component {
     };
     
     if(external) {
+      // if external launch a new tab
       props.href = to;
       props.target = "_blank"
       if (typeof callBack === 'function') {
@@ -109,6 +110,7 @@ class Button extends Component {
         }
       }
     } else {
+      // if to prop exists AND external is null use navigate
       if (typeof to === 'string') {
         props.href = "#";
         props.onClick = (e) => {
@@ -119,6 +121,7 @@ class Button extends Component {
           e.preventDefault();
         }
       } else {
+        // allow for non-href button actions
         props.href = "#";
         props.onClick = (e) => {
           if (typeof callBack === 'function') {
