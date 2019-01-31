@@ -19,6 +19,7 @@ import { withNamespaces } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import LegalModal from '../components/02_molecules/LegalModal';
 import {TabContext} from '../context/tab-context';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import * as IconGalleon from '../images/icons/icn-galleon-wallet.png';
 import * as IconKukai from '../images/icons/icn-kukai.png';
@@ -37,7 +38,7 @@ import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
 import * as IconTezos from '../images/icons/icn-tezos-circle.png';
 import * as IconLedger from '../images/icons/icn-ledger.png';
 
-
+smoothscroll.polyfill();
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
@@ -77,7 +78,7 @@ const GetStarted = (props) => (
         icon={HeroIcon}
         text={props.t("getstarted.hero.text")}
       />      
-      <SectionTabs>
+      <SectionTabs className="section-tabs">
         <Tab tabLabel={props.t("getstarted.tab1.label")}>
           <TwoColIconMarkup icon={IconStore}>
             <StyledTwoColMarkupTitle text={props.t("getstarted.tab1.title1")} />
@@ -264,7 +265,15 @@ const GetStarted = (props) => (
                 <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt/>
                 <TabContext.Consumer>
                   {({setTab}) => (
-                    <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={() => setTab({currentTab: 0})}/>
+                    <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={
+                      () => {
+                        setTab({currentTab: 0});
+                        document.querySelector('.section-tabs').scrollIntoView({
+                          block: 'start',
+                          behavior: 'smooth' 
+                        });
+                      }
+                    }/>
                   )}
                 </TabContext.Consumer>
               </ButtonGroup>
