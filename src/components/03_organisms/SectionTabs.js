@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import TabButton from '../01_atoms/TabButton';
 import {TabContext} from '../../context/tab-context';
+import PropTypes from 'prop-types';
+
 
 const StyledTabs = styled.ul`
   display: flex;
@@ -63,10 +65,10 @@ class SectionTabs extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, className } = this.props;
     return (
       <Fragment>
-        <StyledTabs>
+        <StyledTabs className={className}>
           {this.createTabs(children)}
         </StyledTabs>
         <StyledTabsWrap>

@@ -9,6 +9,7 @@ const buttonStyle = (theme) => {
   const regularStyle = css`
     background: ${theme.background};
     color: ${theme.color};
+    border: 2px solid ${theme.background};
     &:visited{
       color: ${theme.color};
     }
@@ -21,9 +22,25 @@ const buttonStyle = (theme) => {
   return p => p.inverse ? inverseStyle : regularStyle;
 }
 
+const getPadding = (p) => {
+  const hasImage = typeof p.iconImage !== 'undefined';
+  let pad;
+  if (!hasImage) {
+    pad = css`
+      padding: ${p => p.buttonModifier ? '14px 40px' : '0px'};
+    `;
+  } else {
+    pad = css`
+      padding: 14px 40px 14px 60px;
+    `;
+  }
+  
+  return pad;
+}
+
 const StyledButton = styled.a`
   ${p => p.buttonModifier ? buttonStyle(p.theme.buttonBig, p) : buttonStyle(p.theme.button)};
-  padding: ${p => p.buttonModifier ? '17px 40px' : '0px'};
+  ${getPadding};
   display: flex;
   text-decoration: none;
   line-height: 1;
@@ -35,12 +52,18 @@ const StyledButton = styled.a`
   align-items: center;
   justify-content: space-around;
   opacity: 1;
+  white-space: nowrap;
+  position: relative;
   img{
     margin: 0 10px;
     display: block;
     width: 100%;
     height: auto;
     max-width: ${p => p.iconSmall ? 14 : 25}px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
   }
   &:hover{
     opacity: .8;
@@ -81,7 +104,6 @@ class Button extends Component {
       buttonBig,
       iconImage,
       iconDirectionReverse,
-      iconSmall,
       inline,
       className,
       smallTxt,
@@ -93,7 +115,7 @@ class Button extends Component {
       title: text,
       buttonModifier: buttonBig,
       inline: inline,
-      iconSmall: iconSmall,
+      iconImage: iconImage,
       className: className,
       rel: "noopener noreferrer",
       smallTxt: smallTxt,
@@ -101,6 +123,7 @@ class Button extends Component {
     };
     
     if(external) {
+      // if external launch a new tab
       props.href = to;
       props.target = "_blank"
       if (typeof callBack === 'function') {
@@ -109,6 +132,7 @@ class Button extends Component {
         }
       }
     } else {
+      // if to prop exists AND external is null use navigate
       if (typeof to === 'string') {
         props.href = "#";
         props.onClick = (e) => {
@@ -119,6 +143,7 @@ class Button extends Component {
           e.preventDefault();
         }
       } else {
+        // allow for non-href button actions
         props.href = "#";
         props.onClick = (e) => {
           if (typeof callBack === 'function') {
@@ -136,7 +161,7 @@ class Button extends Component {
     
     return (
       <StyledButton {...props}>
-        {typeof(iconImage) !== 'undefined' ? <img src={iconImage} alt="label"/> : null}
+        {typeof iconImage !== 'undefined' ? <img src={iconImage} alt="label"/> : null}
         {ReactHtmlParser(text)}
       </StyledButton>
     )

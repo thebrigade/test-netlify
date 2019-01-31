@@ -30,6 +30,18 @@ const StyledButton = styled(Button)`
   font-weight: 500;
 `;
 
+const StyledButtonWithSmallIcon = styled(Button)`
+  font-weight: 500;
+  padding: 0;
+  img{
+    position: relative;
+    top: auto;
+    transform: none;
+    left: auto;
+    max-width: 14px;
+  }
+`;
+
 const Header = (props) => (
   <StyledHeader>
     <div>
@@ -41,7 +53,7 @@ const Header = (props) => (
       <Navigation>
         <StyledButton text={props.t('nav.top.link1')} to="/learn-about-tezos" />
         <StyledButton text={props.t('nav.top.link2')} to="/bug-bounty"/>
-        <StyledButton
+        <StyledButtonWithSmallIcon
           text={props.t('nav.top.link3')}
           to="https://medium.com/tezos  "
           iconImage={mediumImage} 

@@ -19,6 +19,7 @@ import { withNamespaces } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import LegalModal from '../components/02_molecules/LegalModal';
 import {TabContext} from '../context/tab-context';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import * as IconGalleon from '../images/icons/icn-galleon-wallet.png';
 import * as IconKukai from '../images/icons/icn-kukai.png';
@@ -37,7 +38,7 @@ import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
 import * as IconTezos from '../images/icons/icn-tezos-circle.png';
 import * as IconLedger from '../images/icons/icn-ledger.png';
 
-
+smoothscroll.polyfill();
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
@@ -55,17 +56,17 @@ const StyledSlackButton = styled(Button)`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px 15px 10px;
+  padding: 12px 30px 12px 10px;
   text-align: left;
   line-height: 1.4;
-`;
-
-const StyledSmallIconbutton = styled(Button)`
-  padding: 15px 30px 15px 15px;
   img{
-    margin: 0 10px 0 0;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
   }
 `;
+
 
 const GetStarted = (props) => (
     <Layout>
@@ -77,7 +78,7 @@ const GetStarted = (props) => (
         icon={HeroIcon}
         text={props.t("getstarted.hero.text")}
       />      
-      <SectionTabs>
+      <SectionTabs className="section-tabs">
         <Tab tabLabel={props.t("getstarted.tab1.label")}>
           <TwoColIconMarkup icon={IconStore}>
             <StyledTwoColMarkupTitle text={props.t("getstarted.tab1.title1")} />
@@ -197,8 +198,8 @@ const GetStarted = (props) => (
                 <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title1")} />
                 <Content>{ReactHtmlParser(props.t("getstarted.tab3.content1"))}</Content>
                 <ButtonGroup>
-                  <StyledSmallIconbutton text={props.t("getstarted.tab3.buttonlabel1")} to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
-                  <StyledSmallIconbutton text={props.t("getstarted.tab3.buttonlabel2")} to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
+                  <Button text={props.t("getstarted.tab3.buttonlabel1")} to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
+                  <Button text={props.t("getstarted.tab3.buttonlabel2")} to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
                   <Button text={props.t("getstarted.tab3.buttonlabel3")} to="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" buttonBig smallTxt inverse external/>
                   <Button text={props.t("getstarted.tab3.buttonlabel4")} to="https://groups.google.com/forum/#!forum/tezos-developer-community" buttonBig smallTxt inverse external/>
                 </ButtonGroup>
@@ -264,7 +265,16 @@ const GetStarted = (props) => (
                 <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt/>
                 <TabContext.Consumer>
                   {({setTab}) => (
-                    <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={() => setTab({currentTab: 0})}/>
+                    <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={
+                      () => {
+                        // set current tab the first one and scroll it into view
+                        setTab({currentTab: 0});
+                        document.querySelector('.section-tabs').scrollIntoView({
+                          block: 'start',
+                          behavior: 'smooth' 
+                        });
+                      }
+                    }/>
                   )}
                 </TabContext.Consumer>
               </ButtonGroup>

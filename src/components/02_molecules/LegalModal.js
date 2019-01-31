@@ -90,6 +90,22 @@ class LegalModal extends Component {
     legalCopy: PropTypes.string.isRequired,
     buttonLabel: PropTypes.string.isRequired
   }
+  static contextType = ModalContext;
+  componentDidMount(){
+    const self = this;
+    // create esc key command to close modals
+    document.addEventListener("keyup", (e) => {
+      self.escClose(e, this.context)
+    })
+  }
+  escClose(e, context) {
+    if (e.keyCode === 27 || e.code === "Escape") {
+      context.openModal({open: false});
+    }
+  }
+  componentWillUnmount(){
+    document.removeEventListener("keyup", this.escClose, true);
+  }
   render() {
     const { legalCopy, buttonLabel } = this.props;
     return (
