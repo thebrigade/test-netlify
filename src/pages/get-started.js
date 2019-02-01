@@ -38,7 +38,14 @@ import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
 import * as IconTezos from '../images/icons/icn-tezos-circle.png';
 import * as IconLedger from '../images/icons/icn-ledger.png';
 
-smoothscroll.polyfill();
+
+// required for this polyfill the node and window dilemma
+const isClient = typeof window !== 'undefined';
+
+if (isClient) {
+  smoothscroll.polyfill();
+}
+
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
