@@ -6,11 +6,14 @@ import PropTypes from 'prop-types';
 
 
 const StyledTabs = styled.ul`
-  display: flex;
-  align-items: stretch;
+  display: block;
   list-style: none;
-  li{
-    width: 100%;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: stretch;
+    li{
+      width: 100%;
+    }
   }
 `
 

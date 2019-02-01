@@ -14,15 +14,20 @@ import * as IconSecurity from '../images/icons/icon-lock.svg';
 import styled from 'styled-components';
 
 const StyleHomeTitle = styled(Title)`
-  font-size: 5.0rem;
-  max-width: 990px;
-  margin: 0 auto 80px;
-  padding-left: 0;
+  @media screen and (min-width: 768px) {
+    font-size: 5.0rem;
+    max-width: 990px;
+    margin: 0 auto 80px;
+    padding-left: 0;
+  }
 `;
 
 const StyledHero = styled(Hero)`
   margin-bottom: 180px;
-  margin-top: 50px;
+  @media screen and (min-width: 768px) {
+    
+    margin-top: 50px;
+  }
 `
 const IndexPage = (props) => (
   <LayoutHome>

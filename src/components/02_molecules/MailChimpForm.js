@@ -25,8 +25,10 @@ const statusUpdate = (status) => {
 }
 
 const StyledSubmit = styled.input`
+  
   cursor: pointer;
-  display: inline-block;
+  display: block;
+  width: 100%;
   min-width: 192px;
   color: #8999b1;
   font-size: 15px;
@@ -41,6 +43,10 @@ const StyledSubmit = styled.input`
   &:hover{
     opacity: .8;
   }
+  @media screen and (min-width: 768px) {
+    width: auto;
+    display: inline-block;
+  }
 `;
 
 const StyledEmailField = styled.input`
@@ -53,11 +59,17 @@ const StyledEmailField = styled.input`
   font-size: 16px;
   width: 100%;
   -webkit-appearance: none;
+  margin-bottom: 30px;
+  display: block;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
 `;
 
 const StyledEmailWrap = styled.div`
   position:relative;
-  width: 33%;
+  
+  @media screen and (min-width: 768px) {width: 33%;}
   p{
     position: absolute;
     bottom: -30px;
@@ -75,20 +87,29 @@ const StyledLabelTitle = styled.h4`
 `;
 
 const StyledFormContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  width: 900px;
-  margin: 0 auto;
+  display: block;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 900px;
+    margin: 0 auto;
+  }
 `;
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label` 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-bottom: 30px;
   img{
     margin-right: 30px;
+  }
+  @media screen and (min-width: 768px){
+    justify-content: space-between;
+    margin-bottom: 0px;
   }
 `;
 
