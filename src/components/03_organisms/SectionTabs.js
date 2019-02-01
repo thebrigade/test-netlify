@@ -18,8 +18,11 @@ const StyledTabs = styled.ul`
 `
 
 const StyledTabsWrap = styled.div`
-  padding: 40px;
-  background: #fff;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    padding: 40px;
+    background: #fff;
+  }
 `;
 
 class SectionTabs extends Component {

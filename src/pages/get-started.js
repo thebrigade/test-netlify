@@ -47,8 +47,11 @@ const StyledTabSection = styled(Section)`
 
 const StyledTwoColMarkupTitle = styled(Title)`
   font-size: 3.6rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   letter-spacing: 1.5px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const StyledSlackButton = styled(Button)`
