@@ -38,7 +38,14 @@ import * as IconGitlab from '../images/icons/icn-gitlab-circle.png';
 import * as IconTezos from '../images/icons/icn-tezos-circle.png';
 import * as IconLedger from '../images/icons/icn-ledger.png';
 
-smoothscroll.polyfill();
+
+// required for this polyfill the node and window dilemma
+const isClient = typeof window !== 'undefined';
+
+if (isClient) {
+  smoothscroll.polyfill();
+}
+
 
 const StyledTabSection = styled(Section)`
   margin-bottom: 50px;
@@ -47,8 +54,11 @@ const StyledTabSection = styled(Section)`
 
 const StyledTwoColMarkupTitle = styled(Title)`
   font-size: 3.6rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   letter-spacing: 1.5px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const StyledSlackButton = styled(Button)`

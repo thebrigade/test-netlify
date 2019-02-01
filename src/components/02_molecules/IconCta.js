@@ -18,6 +18,7 @@ const StyledIconCTA = styled.a`
   flex-wrap: nowrap;
   text-decoration: none;
   color: ${p => p.theme.support.color};
+  margin-bottom: 30px;
   cursor: pointer;
   h5{
     font-weight: 300;
@@ -38,6 +39,9 @@ const StyledIconCTA = styled.a`
     ${StyledIconImage} {
       opacity: .8;
     }
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 

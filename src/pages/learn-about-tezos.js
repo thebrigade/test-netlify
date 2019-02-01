@@ -46,37 +46,52 @@ const StyledTwoColMarkupTitle = styled(Title)`
 `;
 
 const StyledTwoColIconMarkup = styled(TwoColIconMarkup)`
-  padding: 10px;
-  width: 50%;
-  img{
-    max-width: 80px;
-    margin-right: 30px;
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+    width: 50%;
+    img{
+      max-width: 80px;
+      margin-right: 30px;
+    }
   }
 `;
 
 const StyledLinkGrid = styled.ul`
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  width: 500px;
-  li{width: 50%; margin-bottom: 10px;}
+  padding-top: 30px;
+  li{margin-bottom: 10px; width: 100%;}
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 500px;
+    padding-top: 0;
+    li{width: 50%;}
+  }
 `;
 
 const StyledArticleBlock = styled.article`
   flex-shrink: 0;
-  width: 40%;
-  padding: 40px 50px;
+  width: 100%;
+  padding: 20px;
   background-color: #f0f3f9;
   a{
     margin-bottom: 20px;
   }
+  @media screen and (min-width: 768px) {
+    flex-shrink: 0;
+    width: 40%;
+    padding: 40px 50px;
+  }
 `
 
 const StyledSpecialLayout = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: block;
   position:relative;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 `;
 
 const StyledArticleTitle = styled(Title)`

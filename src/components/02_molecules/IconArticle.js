@@ -13,19 +13,25 @@ const StyledArticleTitle = styled(Title) `
 `
 
 const StyledGroup = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  margin-bottom: 40px;
+  width: 100%;
   img{
-    display: inline-block;
-    width: 20%;
-    max-width: ${p => p.small ? '80' : '40'}px;
-    min-width: 40px;
-    margin-right: 30px;
+    margin-bottom: 20px;
   }
-  p{
-    font-size: ${p => p.small ? '1.6' : '1.8'}rem;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 40px;
+    img{
+      display: inline-block;
+      width: 20%;
+      max-width: ${p => p.small ? '80' : '40'}px;
+      min-width: 40px;
+      margin-right: 30px;
+    }
+    p{
+      font-size: ${p => p.small ? '1.6' : '1.8'}rem;
+    }
   }
 `;
 

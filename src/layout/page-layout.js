@@ -32,14 +32,55 @@ const GlobalStyle = createGlobalStyle`
 `
 const StyledBody = styled.div`
   width: 100%;
-  background: white url(${bodyImage}) no-repeat top center;
-  background-size: 100% auto;
+  background-color: white;
+  background-image: linear-gradient(#f5f9fe, #ffffff);
+  background-size: 100% 40vh;
+  background-repeat: repeat-x;
   overflow: hidden;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top:50px;
+    width: 100%;
+    height: 400px;
+    z-index: 0;
+    width: 0; 
+    height: 0; 
+    border-top: 200px solid transparent;
+    border-bottom: 200px solid transparent;
+    border-left: 230px solid #D7E3F1;
+    filter: blur(10px);
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 400px;
+    z-index: 0;
+    width: 0; 
+    height: 0; 
+    border-top: 200px solid transparent;
+    border-bottom: 200px solid transparent;
+    border-left: 230px solid #f5f9fe; 
+  }
   .container{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 50px;
-    color: ${p => p.theme.paragraph.color}
+    color: ${p => p.theme.paragraph.color};
+    position: relative;
+    z-index: 1;
+  }
+  @media screen and (min-width: 768px) {
+    background-color: white;
+    background-image: url(${bodyImage});
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    &:before, &:after{display: none;}
   }
 `;
 

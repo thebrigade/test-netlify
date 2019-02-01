@@ -22,14 +22,13 @@ const StyledModal = styled.div`
   }
   .modal-wrap{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    top: 0;
+    left: 0;
+    transform: none;
     background: ${COLOR_SNOW};
-    padding: 50px;
+    padding: 50px 20px;
     box-shadow: 0 0 30px rgba(0,0,0,.1);
     max-width: 600px;
-
     p{
       margin-bottom: 30px;
       opacity: .7;
@@ -41,6 +40,16 @@ const StyledModal = styled.div`
       align-items: center;
       text-align: center;
       justify-content: space-around;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    
+    .modal-wrap{
+      padding: 50px 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
     }
   }
 `;

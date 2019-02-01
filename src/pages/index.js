@@ -14,6 +14,9 @@ import * as IconSecurity from '../images/icons/icon-lock.svg';
 import styled from 'styled-components';
 
 const StyleHomeTitle = styled(Title)`
+  margin: 0 0 30px;
+  padding-left: 0;
+  font-size: 3.5rem;
   @media screen and (min-width: 768px) {
     font-size: 5.0rem;
     max-width: 990px;
@@ -23,7 +26,7 @@ const StyleHomeTitle = styled(Title)`
 `;
 
 const StyledHero = styled(Hero)`
-  margin-bottom: 180px;
+  margin-bottom: 230px;
   @media screen and (min-width: 768px) {
     
     margin-top: 50px;

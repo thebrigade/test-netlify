@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import theme from '../../theme';
 
 
-const StyledSection = styled.div`
+const StyledSection = styled.section`
   margin-bottom: 1.45rem;
-  padding: 10px 20px;
+  padding: 10px 0px;
   width: 100%;
   & > div{
     margin: 0 auto;
@@ -30,6 +30,11 @@ const StyledSection = styled.div`
     font-size: 2.4rem;
     color: ${p => p.theme.header.color}
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 10px 20px;
+  }
+  
 `;
 
 
