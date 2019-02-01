@@ -43,8 +43,9 @@ const StyledModal = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    padding: 50px;
+    
     .modal-wrap{
+      padding: 50px 50px;
       position: absolute;
       top: 50%;
       left: 50%;
