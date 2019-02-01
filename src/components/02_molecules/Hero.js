@@ -8,36 +8,50 @@ import ReactHtmlParser from 'react-html-parser';
 const StyledHeroTitle = styled(Title)`
   font-size: 5.6rem;
   width: 100%;
-  padding-left: 30px;
   margin-bottom: 0;
+  @media screen and (min-width: 768px) {
+    padding-left: 30px;
+  }
 `;
 
 const StyledTitleIcon = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   img{
     display: block;
     width: 100%;
     max-width: 170px;
     margin-right: 20px;
+    margin-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{
+      margin-bottom: 0;
+    }
   }
 `;
 
 const StyledHero = styled.div`
-  width: 100%;
-  max-width: ${p => p.proximity ? p.proximity : 1200}px;
-  padding: ${p => p.icon ? '15vh 0 15vh 50px' : '15vh 0'};
-  overflow: hidden;
+  padding: ${p => p.icon ? '5vh 0 5vh 0' : '5vh 0'};
   p{
-    width: ${p => p.sub && p.sub.length > 180 ? 60 : 40}%;
-    float: right;
+    margin-top: 30px;
     line-height: 1.8;
     font-size: 1.8rem;
     color: ${COLOR_PRIMARY_HEADER};
     font-weight: 300;
-    padding-right: 30px;
-    margin-top: 60px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    max-width: ${p => p.proximity ? p.proximity : 1200}px;
+    padding: ${p => p.icon ? '15vh 0 15vh 50px' : '15vh 0'};
+    overflow: hidden;
+    p{
+      width: ${p => p.sub && p.sub.length > 180 ? 60 : 40}%;
+      float: right;
+      padding-right: 30px;
+      margin-top: 60px;
+    }
   }
 `;
 

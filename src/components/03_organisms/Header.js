@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import styled from 'styled-components';
 import Navigation from '../02_molecules/Navigation';
 import * as logoImage from '../../images/logo-tezos.svg';
@@ -47,32 +47,37 @@ const StyledButtonWithSmallIcon = styled(Button)`
 const Header = (props) => (
   <NavigationContextProvider>
     <StyledHeader>
+    <NavigationContext.Consumer>
+      {({toggleMobileNav}) => (
       <div>
         <h1>
-          <Link to="/">
+          <a href="#" onClick={(e) => {
+            toggleMobileNav({mobileNavOpen: false});
+            navigate('/');
+            e.preventDefault();
+          }}>
             <Logo image={logoImage} />
-          </Link>
+          </a>
         </h1>
-        <NavigationContext.Consumer>
-          {({toggleMobileNav}) => (
-          <Navigation>
-            <StyledButton text={props.t('nav.top.link1')} to="/learn-about-tezos" callBack={() => toggleMobileNav({mobileNavOpen: false})}/>
-            <StyledButton text={props.t('nav.top.link2')} to="/bug-bounty" callBack={() => toggleMobileNav({mobileNavOpen: false})}/>
-            <StyledButtonWithSmallIcon
-              text={props.t('nav.top.link3')}
-              to="https://medium.com/tezos  "
-              iconImage={mediumImage} 
-              iconDirectionReverse
-              iconSmall
-              external
-              callBack={() => toggleMobileNav({mobileNavOpen: false})}
-            />
-            <StyledButton text={props.t('nav.top.link4')} to="/get-started" buttonBig callBack={() => toggleMobileNav({mobileNavOpen: false})}/>
-          </Navigation>
-          )}
-            
-        </NavigationContext.Consumer>
+        
+        <Navigation>
+          <StyledButton text={props.t('nav.top.link1')} to="/learn-about-tezos" callBack={() => toggleMobileNav({mobileNavOpen: false})}/>
+          <StyledButton text={props.t('nav.top.link2')} to="/bug-bounty" callBack={() => toggleMobileNav({mobileNavOpen: false})}/>
+          <StyledButtonWithSmallIcon
+            text={props.t('nav.top.link3')}
+            to="https://medium.com/tezos  "
+            iconImage={mediumImage} 
+            iconDirectionReverse
+            iconSmall
+            external
+            callBack={() => toggleMobileNav({mobileNavOpen: false})}
+          />
+          <StyledButton text={props.t('nav.top.link4')} to="/get-started" buttonBig callBack={() => toggleMobileNav({mobileNavOpen: false})}/>
+        </Navigation>
+          
       </div>
+      )}  
+      </NavigationContext.Consumer>
     </StyledHeader>
   </NavigationContextProvider>
 )
