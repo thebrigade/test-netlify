@@ -18,6 +18,9 @@ const StyledBgContainer = styled.div`
 	height: 1000px;
 	min-height: 738px;
 	overflow-x: hidden;
+	@media screen and (min-width: 768px) {
+		height: 1200px;
+	}
 `;
 
 const StyledBgImage = styled.img`
