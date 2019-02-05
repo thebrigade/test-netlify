@@ -37,6 +37,7 @@ const StyledNavGroup = styled.div`
       }
     }
   }
+  
   @media screen and (min-width: 768px) {
     display: block;
     left: auto;
