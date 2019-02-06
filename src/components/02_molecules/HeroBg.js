@@ -19,7 +19,7 @@ const StyledBgContainer = styled.div`
 	min-height: 738px;
 	overflow-x: hidden;
 	@media screen and (min-width: 768px) {
-		height: 1200px;
+		height: 110vh;
 	}
 `;
 

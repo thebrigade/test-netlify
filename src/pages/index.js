@@ -26,7 +26,7 @@ const StyleHomeTitle = styled(Title)`
 `;
 
 const StyledHero = styled(Hero)`
-  margin-bottom: 230px;
+  min-height: calc(100vh - 224px);
   @media screen and (min-width: 768px) {
     
     margin-top: 50px;
