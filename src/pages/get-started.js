@@ -79,221 +79,220 @@ const StyledSlackButton = styled(Button)`
 
 
 const GetStarted = (props) => (
-    <Layout>
-      <LegalModal
-        legalCopy={props.t('getstarted.tab1.disclaimer')}
-        buttonLabel="Continue To Application"
-      />
-      <Hero
-        icon={HeroIcon}
-        text={props.t("getstarted.hero.text")}
-      />      
-      <SectionTabs className="section-tabs">
-        <Tab tabLabel={props.t("getstarted.tab1.label")}>
-          <TwoColIconMarkup icon={IconStore}>
-            <StyledTwoColMarkupTitle text={props.t("getstarted.tab1.title1")} />
+  <Layout>
+    <LegalModal
+      legalCopy={props.t('modal1.content')}
+      buttonLabel={props.t('modal1.buttonlabel')}
+    />
+    <Hero
+      icon={HeroIcon}
+      text={props.t("getstarted.hero.text")}
+    />      
+    <SectionTabs className="section-tabs">
+      <Tab tabLabel={props.t("getstarted.tab1.label")}>
+        <TwoColIconMarkup icon={IconStore}>
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab1.title1")} />
+          <Content>
+            {ReactHtmlParser(props.t("getstarted.tab1.content1"))}
+          </Content>
+          <StyledTabSection title={props.t("getstarted.tab1.title2")}>
+            <IconCta
+              platforms={['macOS','Windows','Linux']}
+              title="Galleon Wallet"
+              to="https://galleon-wallet.tech/"
+              icon={IconGalleon}
+              external
+            />
+            <IconCta
+              platforms={['macOS','Windows','Web','Android']}
+              title="Tezbox"
+              to="https://tezbox.com/"
+              icon={IconTezbox}
+              external
+            />
+            <IconCta
+              platforms={['Web']}
+              title="Kukai"
+              to="https://kukai.app/"
+              icon={IconKukai}
+              external
+            />
+          </StyledTabSection>
+          <StyledTabSection title={props.t("getstarted.tab1.title3")}>
+            <IconCta
+              platforms={['Obsidian Systems']}
+              title="Ledger"
+              to="https://www.ledger.com/"
+              icon={IconLedger}
+              external
+            />
+            <IconCta
+              title="Trezor"
+              to="https://trezor.io/"
+              icon={IconTrezor}
+              external
+            />
+          </StyledTabSection>
+          <StyledTabSection title={props.t("getstarted.tab1.title4")}>
+            <IconCta
+              title="Tezos CLI"
+              to="https://tezos.gitlab.io/master/api/cli-commands.html"
+              icon={IconCLI}
+              external
+            />
+          </StyledTabSection>
+          <Disclaimer>
+            {ReactHtmlParser(props.t('getstarted.tab1.disclaimer'))}
+          </Disclaimer>
+        </TwoColIconMarkup>
+      </Tab>
+      <Tab tabLabel={props.t("getstarted.tab2.label")}>
+        <TwoColIconMarkup icon={IconBaking}>
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab2.title1")} />
+          <Content>
+            {ReactHtmlParser(props.t("getstarted.tab2.content1"))}
+          </Content>
+          <StyledTabSection>
+            <article>
+              <Title text={props.t("getstarted.tab2.title2")} />
+              <Content>{props.t("getstarted.tab2.content2")}</Content>
+            </article>
+            <article>
+              <Title text={props.t("getstarted.tab2.title3")} />
+              <Content>{props.t("getstarted.tab2.content3")}</Content>
+            </article>
+            <article>
+              <Title text={props.t("getstarted.tab2.title4")} />
+              <Content>{props.t("getstarted.tab2.content4")}</Content>
+              <br />
+              <StyledSlackButton text={props.t("getstarted.tab2.slacklabel")} iconImage={IconSlack} buttonBig smallTxt to="mailto:tezos@obsidian.systems" external/>
+            </article>
+          </StyledTabSection>
+        </TwoColIconMarkup>
+
+        <TwoColIconMarkup icon={IconCheck}>
+
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab2.title5")} />
+          
+          <StyledTabSection gridColumn={2}>
+            <article>
+              <Content>
+                <ul>
+                  <li>
+                    <a href="http://tezos.gitlab.io/mainnet/whitedoc/proof_of_stake.html" target="_blank" rel="noopener noreferrer">{props.t("getstarted.tab2.label2")}</a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/tezos/its-a-baker-s-life-for-me-c214971201e1" target="_blank" rel="noopener noreferrer">{props.t("getstarted.tab2.label3")}</a>
+                  </li>
+                </ul>
+              </Content>
+            </article>
+            <article>
+              <Title text={props.t("getstarted.tab2.title6")} />
+              <IconCta
+                platforms={['Ledger']}
+                title="Obsidian Systems"
+                to="https://github.com/obsidiansystems/ledger-app-tezos"
+                icon={IconObsidian}
+              />
+            </article>
+          </StyledTabSection>
+
+        </TwoColIconMarkup>
+      </Tab>
+      <Tab tabLabel={props.t("getstarted.tab3.label")}>
+        <TwoColIconMarkup icon={IconCode}>
+
+          <StyledTabSection gridColumn={1}>
+            <article>
+              <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title1")} />
+              <Content>{ReactHtmlParser(props.t("getstarted.tab3.content1"))}</Content>
+              <ButtonGroup>
+                <Button text={props.t("getstarted.tab3.buttonlabel1")} to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel2")} to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel3")} to="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" buttonBig smallTxt inverse external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel4")} to="https://groups.google.com/forum/#!forum/tezos-developer-community" buttonBig smallTxt inverse external/>
+              </ButtonGroup>
+              
+            </article>
+          </StyledTabSection>
+          
+          <StyledTabSection gridColumn={1}>
+            <article>
+              <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title2")} />
+              <Content>{ReactHtmlParser(props.t("getstarted.tab3.content2"))}</Content>
+              <ButtonGroup>
+                <Button text={props.t("getstarted.tab3.buttonlabel5")} to="http://tezos.gitlab.io/mainnet/whitedoc/michelson.html" buttonBig smallTxt external/>
+              </ButtonGroup>
+            </article>
+          </StyledTabSection>
+
+        </TwoColIconMarkup>
+
+        <TwoColIconMarkup icon={IconFolder}>
+          <StyledTabSection gridColumn={1}>
+            <article>
+              <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title3")} />
+              <Content>{ReactHtmlParser(props.t("getstarted.tab3.content3"))}</Content>
+              <ButtonGroup>
+                <Button text={props.t("getstarted.tab3.buttonlabel6")} to="https://ocaml.org/learn/description.html" buttonBig smallTxt external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel7")} to="https://try.ocamlpro.com/" buttonBig smallTxt inverse external/>
+                <Button text={props.t("getstarted.tab3.buttonlabel8")} to="https://realworldocaml.org/" buttonBig smallTxt inverse external/>
+              </ButtonGroup>
+            </article>
+          </StyledTabSection>
+        </TwoColIconMarkup>
+
+      </Tab>
+      <Tab tabLabel={props.t("getstarted.tab4.label")}>
+        <TwoColIconMarkup icon={IconArrow}>
+          <StyledTwoColMarkupTitle text={props.t("getstarted.tab4.title1")} />
+          <List listIndex={1}>
+            <Title text={props.t("getstarted.tab4.title2")}/>
             <Content>
-              {ReactHtmlParser(props.t("getstarted.tab1.content1"))}
+              {ReactHtmlParser(props.t("getstarted.tab4.content1"))}
             </Content>
-            <StyledTabSection title={props.t("getstarted.tab1.title2")}>
-              <IconCta
-                platforms={['macOS','Windows','Linux']}
-                title="Galleon Wallet"
-                to="https://galleon-wallet.tech/"
-                icon={IconGalleon}
-                external
-              />
-              <IconCta
-                platforms={['macOS','Windows','Web','Android']}
-                title="Tezbox"
-                to="https://tezbox.com/"
-                icon={IconTezbox}
-                external
-              />
-              <IconCta
-                platforms={['Web']}
-                title="Kukai"
-                to="https://kukai.app/"
-                icon={IconKukai}
-                external
-              />
-            </StyledTabSection>
-            <StyledTabSection title={props.t("getstarted.tab1.title3")}>
-              <IconCta
-                platforms={['Obsidian Systems']}
-                title="Ledger"
-                to="https://www.ledger.com/"
-                icon={IconLedger}
-                external
-              />
-              <IconCta
-                title="Trezor"
-                to="https://trezor.io/"
-                icon={IconTrezor}
-                external
-              />
-            </StyledTabSection>
-            <StyledTabSection title={props.t("getstarted.tab1.title4")}>
-              <IconCta
-                title="Tezos CLI"
-                to="https://tezos.gitlab.io/master/api/cli-commands.html"
-                icon={IconCLI}
-                external
-              />
-            </StyledTabSection>
-            <Disclaimer>
-              {ReactHtmlParser(props.t('getstarted.tab1.disclaimer'))}
-            </Disclaimer>
-          </TwoColIconMarkup>
-        </Tab>
-        <Tab tabLabel={props.t("getstarted.tab2.label")}>
-          <TwoColIconMarkup icon={IconBaking}>
-            <StyledTwoColMarkupTitle text={props.t("getstarted.tab2.title1")} />
+            <ButtonGroup>
+              <Button text={props.t("getstarted.tab4.buttonlabel1")} to="https://check.tezos.com/" external buttonBig smallTxt external/>
+            </ButtonGroup>
+          </List>
+          <List listIndex={2}>
+            <Title text={props.t("getstarted.tab4.title3")}/>
             <Content>
-              {ReactHtmlParser(props.t("getstarted.tab2.content1"))}
+              {ReactHtmlParser(props.t("getstarted.tab4.content2"))}
             </Content>
-            <StyledTabSection>
-              <article>
-                <Title text={props.t("getstarted.tab2.title2")} />
-                <Content>{props.t("getstarted.tab2.content2")}</Content>
-              </article>
-              <article>
-                <Title text={props.t("getstarted.tab2.title3")} />
-                <Content>{props.t("getstarted.tab2.content3")}</Content>
-              </article>
-              <article>
-                <Title text={props.t("getstarted.tab2.title4")} />
-                <Content>{props.t("getstarted.tab2.content4")}</Content>
-                <br />
-                <StyledSlackButton text={props.t("getstarted.tab2.slacklabel")} iconImage={IconSlack} buttonBig smallTxt to="mailto:tezos@obsidian.systems" external/>
-              </article>
-            </StyledTabSection>
-          </TwoColIconMarkup>
-
-          <TwoColIconMarkup icon={IconCheck}>
-
-            <StyledTwoColMarkupTitle text={props.t("getstarted.tab2.title5")} />
-            
-            <StyledTabSection gridColumn={2}>
-              <article>
-                <Content>
-                  <ul>
-                    <li>
-                      <a href="http://tezos.gitlab.io/mainnet/whitedoc/proof_of_stake.html" target="_blank" rel="noopener noreferrer">{props.t("getstarted.tab2.label2")}</a>
-                    </li>
-                    <li>
-                      <a href="https://medium.com/tezos/its-a-baker-s-life-for-me-c214971201e1" target="_blank" rel="noopener noreferrer">{props.t("getstarted.tab2.label3")}</a>
-                    </li>
-                  </ul>
-                </Content>
-              </article>
-              <article>
-                <Title text={props.t("getstarted.tab2.title6")} />
-                <IconCta
-                  platforms={['Ledger']}
-                  title="Obsidian Systems"
-                  to="https://github.com/obsidiansystems/ledger-app-tezos"
-                  icon={IconObsidian}
-                />
-              </article>
-            </StyledTabSection>
-
-          </TwoColIconMarkup>
-        </Tab>
-        <Tab tabLabel={props.t("getstarted.tab3.label")}>
-          <TwoColIconMarkup icon={IconCode}>
-
-            <StyledTabSection gridColumn={1}>
-              <article>
-                <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title1")} />
-                <Content>{ReactHtmlParser(props.t("getstarted.tab3.content1"))}</Content>
-                <ButtonGroup>
-                  <Button text={props.t("getstarted.tab3.buttonlabel1")} to="https://tezos.gitlab.io/mainnet/" iconImage={IconTezos} buttonBig smallTxt external/>
-                  <Button text={props.t("getstarted.tab3.buttonlabel2")} to="https://gitlab.com/tezos/tezos" iconImage={IconGitlab} buttonBig smallTxt external/>
-                  <Button text={props.t("getstarted.tab3.buttonlabel3")} to="https://riot.im/app/#/room/#freenode_#tezos:matrix.org" buttonBig smallTxt inverse external/>
-                  <Button text={props.t("getstarted.tab3.buttonlabel4")} to="https://groups.google.com/forum/#!forum/tezos-developer-community" buttonBig smallTxt inverse external/>
-                </ButtonGroup>
-                
-              </article>
-            </StyledTabSection>
-            
-            <StyledTabSection gridColumn={1}>
-              <article>
-                <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title2")} />
-                <Content>{ReactHtmlParser(props.t("getstarted.tab3.content2"))}</Content>
-                <ButtonGroup>
-                  <Button text={props.t("getstarted.tab3.buttonlabel5")} to="http://tezos.gitlab.io/mainnet/whitedoc/michelson.html" buttonBig smallTxt external/>
-                </ButtonGroup>
-              </article>
-            </StyledTabSection>
-
-          </TwoColIconMarkup>
-
-          <TwoColIconMarkup icon={IconFolder}>
-            <StyledTabSection gridColumn={1}>
-              <article>
-                <StyledTwoColMarkupTitle text={props.t("getstarted.tab3.title3")} />
-                <Content>{ReactHtmlParser(props.t("getstarted.tab3.content3"))}</Content>
-                <ButtonGroup>
-                  <Button text={props.t("getstarted.tab3.buttonlabel6")} to="https://ocaml.org/learn/description.html" buttonBig smallTxt external/>
-                  <Button text={props.t("getstarted.tab3.buttonlabel7")} to="https://try.ocamlpro.com/" buttonBig smallTxt inverse external/>
-                  <Button text={props.t("getstarted.tab3.buttonlabel8")} to="https://realworldocaml.org/" buttonBig smallTxt inverse external/>
-                </ButtonGroup>
-              </article>
-            </StyledTabSection>
-          </TwoColIconMarkup>
-
-        </Tab>
-        <Tab tabLabel={props.t("getstarted.tab4.label")}>
-          <TwoColIconMarkup icon={IconArrow}>
-            <StyledTwoColMarkupTitle text={props.t("getstarted.tab4.title1")} />
-            <List listIndex={1}>
-              <Title text={props.t("getstarted.tab4.title2")}/>
-              <Content>
-                {ReactHtmlParser(props.t("getstarted.tab4.content1"))}
-              </Content>
-              <ButtonGroup>
-                <Button text={props.t("getstarted.tab4.buttonlabel1")} to="https://check.tezos.com/" external buttonBig smallTxt external/>
-              </ButtonGroup>
-            </List>
-            <List listIndex={2}>
-              <Title text={props.t("getstarted.tab4.title3")}/>
-              <Content>
-                {ReactHtmlParser(props.t("getstarted.tab4.content2"))}
-              </Content>
-              <ButtonGroup>
-                <Button text={props.t("getstarted.tab4.buttonlabel2")} to="https://verification.tezos.com/" external buttonBig smallTxt/>
-                <Button text={props.t("getstarted.tab4.buttonlabel3")} to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse/>
-              </ButtonGroup>
-            </List>
-            <List listIndex={3}>
-              <Title text={props.t("getstarted.tab4.title4")}/>
-              <Content>
-                {ReactHtmlParser(props.t("getstarted.tab4.content3"))}
-              </Content>
-              <ButtonGroup>
-                <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt/>
-                <TabContext.Consumer>
-                  {({setTab}) => (
-                    <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={
-                      () => {
-                        // set current tab the first one and scroll it into view
-                        setTab({currentTab: 0});
-                        document.querySelector('.section-tabs').scrollIntoView({
-                          block: 'start',
-                          behavior: 'smooth' 
-                        });
-                      }
-                    }/>
-                  )}
-                </TabContext.Consumer>
-              </ButtonGroup>
-            </List>
-          </TwoColIconMarkup>
-        </Tab>
-      </SectionTabs>
-    </Layout>
-
+            <ButtonGroup>
+              <Button text={props.t("getstarted.tab4.buttonlabel2")} to="https://verification.tezos.com/" external buttonBig smallTxt/>
+              <Button text={props.t("getstarted.tab4.buttonlabel3")} to="https://tezos.foundation/news/kyc-aml-faq" external buttonBig smallTxt inverse/>
+            </ButtonGroup>
+          </List>
+          <List listIndex={3}>
+            <Title text={props.t("getstarted.tab4.title4")}/>
+            <Content>
+              {ReactHtmlParser(props.t("getstarted.tab4.content3"))}
+            </Content>
+            <ButtonGroup>
+              <Button text={props.t("getstarted.tab4.buttonlabel4")} to="https://activate.tezos.com/" external buttonBig smallTxt/>
+              <TabContext.Consumer>
+                {({setTab}) => (
+                  <Button text={props.t("getstarted.tab4.buttonlabel5")} buttonBig smallTxt inverse callBack={
+                    () => {
+                      // set current tab the first one and scroll it into view
+                      setTab({currentTab: 0});
+                      document.querySelector('.section-tabs').scrollIntoView({
+                        block: 'start',
+                        behavior: 'smooth' 
+                      });
+                    }
+                  }/>
+                )}
+              </TabContext.Consumer>
+            </ButtonGroup>
+          </List>
+        </TwoColIconMarkup>
+      </Tab>
+    </SectionTabs>
+  </Layout>
 )
 
 export default withNamespaces()(GetStarted);

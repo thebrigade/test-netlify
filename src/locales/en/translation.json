@@ -142,5 +142,9 @@
       "buttonlabel4":"Activate",
       "buttonlabel5":"Store and Use"
     }
+  },
+  "modal1":{
+    "content":"<p>This link is being provided as a convenience and for informational purposes only; the provision of this link does not constitute an endorsement or an approval by the Tezos Foundation of the use of the wallet. The Tezos Foundation bears no responsibility for the accuracy of the information contained in the link, which is not maintained by or otherwise affiliated with the Tezos Foundation. The Tezos Foundation bears no responsibility for the performance or lack thereof of the wallet. Use at your own risk.</p>",
+    "buttonlabel":"Continue to wallet"
   }
 }
